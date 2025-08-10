@@ -235,10 +235,6 @@ function App() {
                   <MapPin className="h-5 w-5 mr-2" />
                   Sylhet, Bangladesh
                 </div>
-                <div className="flex items-center text-slate-600 dark:text-slate-300">
-                  <Phone className="h-5 w-5 mr-2" />
-                  +8801637793410
-                </div>
               </div>
             </div>
             
