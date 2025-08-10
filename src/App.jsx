@@ -171,7 +171,7 @@ function App() {
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Biduyt Das</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
-              Final-year Computer Science undergraduate passionate about software development, 
+              Fresh CSE graduate passionate about iOS and Android development, 
               full-stack projects, and quality assurance
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
