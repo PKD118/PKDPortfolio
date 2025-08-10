@@ -443,38 +443,6 @@ function App() {
     </div>
     
     <div className="max-w-3xl mx-auto space-y-8">
-      {/* General Secretary */}
-      <Card>
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <CardTitle className="text-xl">General Secretary</CardTitle>
-              <CardDescription className="text-lg">CSE Association, KUET</CardDescription>
-            </div>
-            <Badge variant="outline">2023/04 – 2024/04</Badge>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Coordinated operations and communication for over 500 students
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Fostered collaboration across technical, creative, and academic teams
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Cultivated skills in leadership, accountability, and team empathy
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Developed strong attention to detail, task tracking, and documentation practices—skills now applied in QA workflows
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
 
       {/* iOS Developer Intern */}
       <Card>
@@ -505,6 +473,39 @@ function App() {
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               Built WidgetKit extensions and lightweight Watch complications
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+      
+      {/* General Secretary */}
+      <Card>
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <CardTitle className="text-xl">General Secretary</CardTitle>
+              <CardDescription className="text-lg">CSE Association, KUET</CardDescription>
+            </div>
+            <Badge variant="outline">2023/04 – 2024/04</Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Coordinated operations and communication for over 500 students
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Fostered collaboration across technical, creative, and academic teams
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Cultivated skills in leadership, accountability, and team empathy
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Developed strong attention to detail, task tracking, and documentation practices—skills now applied in QA workflows
             </li>
           </ul>
         </CardContent>
