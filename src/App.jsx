@@ -252,7 +252,7 @@ function App() {
                     <div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">BSc Engineering in CSE</h4>
                       <p className="text-slate-600 dark:text-slate-300">Khulna University Of Engineering & Technology</p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">2020 - Present</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">01/2020 - 08/2025</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">Higher Secondary Certificate</h4>
