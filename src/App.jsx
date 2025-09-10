@@ -447,7 +447,7 @@ function App() {
             <div>
               <CardTitle className="text-xl">iOS Developer Intern</CardTitle>
               <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh (working from home)</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh </p>
             </div>
             <Badge variant="outline">2025/06 – 2025/09</Badge>
           </div>
@@ -456,19 +456,23 @@ function App() {
           <ul className="space-y-3 text-slate-600 dark:text-slate-300">
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Developed iOS, iPadOS, and watchOS features using Swift and SwiftUI
+              Engineered watchOS interfaces, including custom watch faces and complications, ensuring pixel-perfect alignment with Figma designs
             </li>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Integrated Firebase (Auth, Firestore) and REST APIs for secure, real-time data sync
+              Integrated weather and health data from REST APIs, optimizing presentation for clarity, performance, and user experience
             </li>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Created modular UI components following clean architecture principles
+              Designed and optimized WidgetKit extensions and complications to be lightweight, functional, and responsive
             </li>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Built WidgetKit extensions and lightweight Watch complications
+              Collaborated with cross-functional teams, incorporated feedback, and iterated quickly to meet review standards
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Contributed to both front-end and back-end development, supporting end-to-end delivery of scalable watchOS features
             </li>
           </ul>
         </CardContent>
