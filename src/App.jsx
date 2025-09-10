@@ -449,7 +449,7 @@ function App() {
               <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
               <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh (working from home)</p>
             </div>
-            <Badge variant="outline">2025/06 – Present</Badge>
+            <Badge variant="outline">2025/06 – 2025/09</Badge>
           </div>
         </CardHeader>
         <CardContent>
