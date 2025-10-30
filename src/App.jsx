@@ -434,11 +434,45 @@ function App() {
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Experience</h2>
       <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-        My leadership and organizational experience that has shaped my collaborative and project management skills.
+        My professional journey in software development, from healthcare payment systems to mobile app development.
       </p>
     </div>
     
     <div className="max-w-3xl mx-auto space-y-8">
+
+      {/* Junior Software Engineer */}
+      <Card>
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <CardTitle className="text-xl">Junior Software Engineer</CardTitle>
+              <CardDescription className="text-lg">LAB3</CardDescription>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
+            </div>
+            <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2025/09 – Present</Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Developing secure multi-tenant POS app for medical clinics with MXMerchant terminal integration
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Implemented resilient payment flow with polling, timeouts, retries, and structured concurrency
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Designed HIPAA-compliant self-service mode with account validation and masked patient data
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Integrated Firebase Firestore (offline-ready) and Cloud Run backend for real-time payment updates
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
 
       {/* iOS Developer Intern */}
       <Card>
@@ -447,32 +481,24 @@ function App() {
             <div>
               <CardTitle className="text-xl">iOS Developer Intern</CardTitle>
               <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh </p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh</p>
             </div>
-            <Badge variant="outline">2025/06 – 2025/09</Badge>
+            <Badge variant="outline">2025/06 – 2025/08</Badge>
           </div>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3 text-slate-600 dark:text-slate-300">
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Engineered watchOS interfaces, including custom watch faces and complications, ensuring pixel-perfect alignment with Figma designs
+              Built WidgetKit extensions and lightweight Watch complications
             </li>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Integrated weather and health data from REST APIs, optimizing presentation for clarity, performance, and user experience
+              Integrated Firebase (Auth, Firestore) and REST APIs for secure, real-time data sync
             </li>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Designed and optimized WidgetKit extensions and complications to be lightweight, functional, and responsive
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Collaborated with cross-functional teams, incorporated feedback, and iterated quickly to meet review standards
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Contributed to both front-end and back-end development, supporting end-to-end delivery of scalable watchOS features
+              Created modular UI components following clean architecture principles
             </li>
           </ul>
         </CardContent>
@@ -510,9 +536,6 @@ function App() {
           </ul>
         </CardContent>
       </Card>
-    </div>
-  </div>
-</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white dark:bg-slate-800">
