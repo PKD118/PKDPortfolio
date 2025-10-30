@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Download, Menu, X } from 'lucide-react'
-import userImage from './assets/cv.jpeg' // Import the user's image
+import userImage from './assets/cv.jpeg'
 import './App.css'
 
 function App() {
@@ -428,114 +428,116 @@ function App() {
         </div>
       </section>
 
-{/* Experience Section */}
-<section id="experience" className="py-20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Experience</h2>
-      <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-        My professional journey in software development, from healthcare payment systems to mobile app development.
-      </p>
-    </div>
-    
-    <div className="max-w-3xl mx-auto space-y-8">
+      {/* Experience Section */}
+      <section id="experience" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Experience</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              My professional journey in software development, from healthcare payment systems to mobile app development.
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-8">
+            {/* Junior Software Engineer */}
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl">Junior Software Engineer</CardTitle>
+                    <CardDescription className="text-lg">LAB3</CardDescription>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
+                  </div>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2025/09 – Present</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Developing secure multi-tenant POS app for medical clinics with MXMerchant terminal integration
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Implemented resilient payment flow with polling, timeouts, retries, and structured concurrency
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Designed HIPAA-compliant self-service mode with account validation and masked patient data
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Integrated Firebase Firestore (offline-ready) and Cloud Run backend for real-time payment updates
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-      {/* Junior Software Engineer */}
-      <Card>
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <CardTitle className="text-xl">Junior Software Engineer</CardTitle>
-              <CardDescription className="text-lg">LAB3</CardDescription>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
-            </div>
-            <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2025/09 – Present</Badge>
+            {/* iOS Developer Intern */}
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl">iOS Developer Intern</CardTitle>
+                    <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh</p>
+                  </div>
+                  <Badge variant="outline">2025/06 – 2025/08</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Built WidgetKit extensions and lightweight Watch complications
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Integrated Firebase (Auth, Firestore) and REST APIs for secure, real-time data sync
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Created modular UI components following clean architecture principles
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            {/* General Secretary */}
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl">General Secretary</CardTitle>
+                    <CardDescription className="text-lg">CSE Association, KUET</CardDescription>
+                  </div>
+                  <Badge variant="outline">2023/04 – 2024/04</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Coordinated operations and communication for over 500 students
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Fostered collaboration across technical, creative, and academic teams
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Cultivated skills in leadership, accountability, and team empathy
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Developed strong attention to detail, task tracking, and documentation practices—skills now applied in QA workflows
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Developing secure multi-tenant POS app for medical clinics with MXMerchant terminal integration
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Implemented resilient payment flow with polling, timeouts, retries, and structured concurrency
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Designed HIPAA-compliant self-service mode with account validation and masked patient data
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Integrated Firebase Firestore (offline-ready) and Cloud Run backend for real-time payment updates
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      {/* iOS Developer Intern */}
-      <Card>
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <CardTitle className="text-xl">iOS Developer Intern</CardTitle>
-              <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh</p>
-            </div>
-            <Badge variant="outline">2025/06 – 2025/08</Badge>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Built WidgetKit extensions and lightweight Watch complications
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Integrated Firebase (Auth, Firestore) and REST APIs for secure, real-time data sync
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Created modular UI components following clean architecture principles
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-      
-      {/* General Secretary */}
-      <Card>
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <CardTitle className="text-xl">General Secretary</CardTitle>
-              <CardDescription className="text-lg">CSE Association, KUET</CardDescription>
-            </div>
-            <Badge variant="outline">2023/04 – 2024/04</Badge>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Coordinated operations and communication for over 500 students
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Fostered collaboration across technical, creative, and academic teams
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Cultivated skills in leadership, accountability, and team empathy
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Developed strong attention to detail, task tracking, and documentation practices—skills now applied in QA workflows
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white dark:bg-slate-800">
@@ -671,4 +673,3 @@ function App() {
 }
 
 export default App
-
