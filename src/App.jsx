@@ -444,7 +444,7 @@ function App() {
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle className="text-xl">Junior Software Engineer</CardTitle>
+                    <CardTitle className="text-xl">Junior Developer</CardTitle>
                     <CardDescription className="text-lg">LAB3</CardDescription>
                     <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
                   </div>
