@@ -43,13 +43,27 @@ function App() {
 
   const skills = {
     languages: ['Java', 'Python', 'C++', 'C', 'JavaScript', 'C#', 'SQL', 'Swift'],
-    frameworks: ['Firebase', 'SwiftUI', 'Laravel', 'Selenium'],
+    frameworks: ['Firebase', 'SwiftUI', 'UIKit', 'Combine', 'WidgetKit', 'MapKit', 'Laravel', 'Selenium'],
     databases: ['MongoDB', 'MySQL', 'Oracle', 'Apache Derby'],
-    tools: ['GitHub', 'VS Code', 'Android Studio', 'Xcode', 'Firebase Console', 'MongoDB Compass', 'Jira'],
-    practices: ['OOP', 'Data Structures & Algorithms', 'Manual Testing', 'UI Testing', 'Test Case Design', 'GitHub Issue Tracking', 'Agile Workflow', 'Basic Automation', 'CI/CD pipelines']
+    tools: ['GitHub', 'VS Code', 'Android Studio', 'Xcode', 'Firebase Console', 'MongoDB Compass', 'Jira', 'Postman', 'Instruments', 'OSLog', 'TestFlight', 'CocoaPods', 'Swift Package Manager'],
+    practices: ['OOP', 'MVVM Architecture', 'Protocol-Oriented Programming', 'Swift Concurrency', 'Data Structures & Algorithms', 'Manual Testing', 'UI Testing', 'Test Case Design', 'GitHub Issue Tracking', 'Agile Workflow', 'Basic Automation', 'CI/CD pipelines', 'Performance Profiling']
   }
 
   const projects = [
+    {
+      title: 'BillPay-POS (Healthcare Payment System)',
+      description: 'A production iPad payment application for medical clinics, processing 50,000+ patient transactions monthly with HIPAA-compliant security measures.',
+      technologies: ['Swift 6', 'SwiftUI', 'Firebase', 'MXMerchant', 'AnyPay SDK', 'REST APIs'],
+      features: [
+        'Multi-tenant SAAS architecture for clinic-level isolation',
+        'Third-party payment gateway integration (MXMerchant terminal, BBPOS Bluetooth reader)',
+        'Real-time Firestore sync with offline-first design',
+        'Full payment stack: terminal, Bluetooth, e-check, manual & saved methods',
+        'Secure patient authentication and data handling',
+        'Performance optimization via Instruments profiling'
+      ],
+      project_link: 'https://github.com/PKD118'
+    },
     {
       title: 'Foodier! & Foodier Restaurant',
       description: 'A full-stack iOS food delivery system with real-time data handling, authentication, and MapKit-based tracking services.',
@@ -171,8 +185,7 @@ function App() {
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Biduyt Das</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
-              Fresh CSE graduate passionate about iOS and Android development, 
-              full-stack projects, and quality assurance
+              iOS Developer specialized in Swift, SwiftUI, and production-ready mobile applications. Currently building healthcare fintech solutions at LAB3 with expertise in payment integrations, real-time data systems, and scalable architecture.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
@@ -210,7 +223,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">About Me</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              I'm a passionate software developer with strong foundations in computer science and hands-on experience in full-stack development.
+              I'm an iOS developer with production experience building secure, scalable mobile applications. Currently working as the sole iOS developer at LAB3, I specialize in Swift, SwiftUI, and MVVM architecture with hands-on experience in payment gateway integrations, third-party SDK implementations, and real-time data synchronization.
             </p>
           </div>
           
@@ -218,16 +231,13 @@ function App() {
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">My Journey</h3>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                As a Fresh Computer Science graduate from Khulna University of Engineering & Technology, 
-                I've developed strong foundations in software development, object-oriented programming, and full-stack project experience.
+                As a Computer Science graduate from Khulna University of Engineering & Technology, I've progressed from academic projects to production iOS development. Currently at LAB3, I've built BillPay-POS—a healthcare payment system processing 50,000+ monthly transactions with multi-tenant architecture, payment gateway integrations, and offline-first design.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                I'm hands-on with multiple programming languages including Java, C++, Python, and web/mobile frameworks 
-                like Firebase and SwiftUI. My experience spans debugging, manual and UI testing, and version control workflows.
+                My technical foundation spans Swift 6, SwiftUI, Firebase, REST APIs, and payment SDKs (MXMerchant, AnyPay). I've delivered features including Bluetooth card reader integration, real-time Firestore sync, and secure authentication flows while collaborating with cross-functional backend and QA teams.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-6">
-                I'm passionate about writing clean, maintainable code and eager to contribute to scalable backend and frontend systems. 
-                I also have experience in quality assurance, with knowledge of manual testing, basic test automation, and defect tracking.
+                I focus on writing clean, maintainable code and solving complex technical challenges—from Swift concurrency issues to payment processing reliability. My experience includes debugging production systems, performance profiling with Instruments, and managing TestFlight deployments.
               </p>
               
               <div className="flex flex-wrap gap-4">
@@ -444,30 +454,38 @@ function App() {
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle className="text-xl">Junior Developer</CardTitle>
+                    <CardTitle className="text-xl">Junior iOS Developer</CardTitle>
                     <CardDescription className="text-lg">LAB3</CardDescription>
                     <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
                   </div>
-                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2025/09 – Present</Badge>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2024/09 – Present</Badge>
                 </div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-slate-600 dark:text-slate-300">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Developing secure multi-tenant POS app for medical clinics with MXMerchant terminal integration
+                    Sole iOS developer for BillPay-POS healthcare payment system processing 50,000+ monthly transactions
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Implemented resilient payment flow with polling, timeouts, retries, and structured concurrency
+                    Built scalable features using Swift 6, SwiftUI, MVVM with RESTful APIs and JSON integration
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Designed HIPAA-compliant self-service mode with account validation and masked patient data
+                    Integrated third-party payment SDKs (MXMerchant terminal, BBPOS Bluetooth card reader)
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Integrated Firebase Firestore (offline-ready) and Cloud Run backend for real-time payment updates
+                    Collaborated with cross-functional backend, QA, and product teams for feature delivery
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Ensured application security, performance, and code quality through testing and profiling
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Managed TestFlight deployments and reduced debugging time by 75% using structured logging
                   </li>
                 </ul>
               </CardContent>
@@ -489,15 +507,19 @@ function App() {
                 <ul className="space-y-3 text-slate-600 dark:text-slate-300">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Built WidgetKit extensions and lightweight Watch complications
+                    Built WidgetKit extensions and lightweight Apple Watch complications
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Integrated Firebase (Auth, Firestore) and REST APIs for secure, real-time data sync
+                    Integrated Firebase Auth & Firestore with MVVM-based architecture
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Created modular UI components following clean architecture principles
+                    Created modular UI components and implemented REST API data handlers
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    Participated in Agile workflows with remote team members
                   </li>
                 </ul>
               </CardContent>
@@ -648,7 +670,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Biduyt Das</h3>
-            <p className="text-slate-400 mb-6">iOS and Mobile App Developer</p>
+            <p className="text-slate-400 mb-6">iOS Developer | Swift & SwiftUI Specialist</p>
             <div className="flex justify-center space-x-6 mb-8">
               <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-400 hover:text-white transition-colors">
                 <Mail className="h-6 w-6" />
