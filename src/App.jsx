@@ -51,6 +51,7 @@ function App() {
     {
       title: 'BillPay-POS — iPad Payment System',
       subtitle: 'Swift 6, SwiftUI, Firebase, GCP, MXMerchant, AnyPay · Sep 2025 – Nov 2025',
+      image: '/images/billpay.jpg',
       description: 'Built and owned end-to-end as the sole iOS developer — from the first line of architecture to TestFlight deployment. The app processes 50,000+ monthly transactions across multiple healthcare clinics on a multi-tenant SaaS platform.',
       technologies: ['Swift 6', 'SwiftUI', 'Firebase', 'GCP', 'MXMerchant', 'AnyPay SDK'],
       features: [
@@ -65,6 +66,7 @@ function App() {
     {
       title: 'Foodier! & Foodier Restaurant',
       subtitle: 'SwiftUI, Firebase, MapKit · 2023',
+      image: '/images/foodier.jpg',
       description: 'Built two companion apps — a customer-facing food delivery app and a restaurant management app — that work together in real time. Won 1st place at the iOS App Showcase 2023.',
       technologies: ['SwiftUI', 'Firebase', 'MapKit'],
       achievements: ['1st Place — iOS App Showcase, 2023'],
@@ -79,6 +81,7 @@ function App() {
     {
       title: 'CfL — Care for Love',
       subtitle: 'Java (Android), Firebase · 2023',
+      image: '/images/cfl.jpg',
       description: 'Built a health-monitoring app for cardiac patients where doctors and caregivers could track vitals in real time. Covered the full delivery cycle from code to documentation.',
       technologies: ['Java', 'Android', 'Firebase'],
       features: [
@@ -91,6 +94,7 @@ function App() {
     {
       title: 'Teleport 24/7',
       subtitle: 'Java, Laravel, Apache Derby, MySQL · 2022',
+      image: '/images/teleport.jpg',
       description: 'Courier management platform built with both Laravel and Java NetBeans for end-to-end delivery operations. Won Best Java Project in the CSE 2200 course.',
       technologies: ['Java', 'Laravel', 'Apache Derby', 'MySQL'],
       achievements: ['Best Java Project — CSE 2200 Course, 2022'],
