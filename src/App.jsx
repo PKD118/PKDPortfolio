@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Download, Menu, X } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Menu, X, Download } from 'lucide-react'
 import userImage from './assets/cv.jpeg'
 import './App.css'
 
@@ -14,274 +14,259 @@ function App() {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact']
       const scrollPosition = window.scrollY + 100
-
       for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const offsetTop = element.offsetTop
-          const offsetHeight = element.offsetHeight
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
+        const el = document.getElementById(section)
+        if (el && scrollPosition >= el.offsetTop && scrollPosition < el.offsetTop + el.offsetHeight) {
+          setActiveSection(section)
+          break
         }
       }
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
   }
 
+  const navItems = ['home', 'about', 'skills', 'projects', 'experience', 'contact']
+
   const skills = {
-    languages: ['Java', 'Python', 'C++', 'C', 'JavaScript', 'C#', 'SQL', 'Swift'],
-    frameworks: ['Firebase', 'SwiftUI', 'UIKit', 'Combine', 'WidgetKit', 'MapKit', 'Laravel', 'Selenium'],
-    databases: ['MongoDB', 'MySQL', 'Oracle', 'Apache Derby'],
-    tools: ['GitHub', 'VS Code', 'Android Studio', 'Xcode', 'Firebase Console', 'MongoDB Compass', 'Jira', 'Postman', 'Instruments', 'OSLog', 'TestFlight', 'CocoaPods', 'Swift Package Manager'],
-    practices: ['OOP', 'MVVM Architecture', 'Protocol-Oriented Programming', 'Swift Concurrency', 'Data Structures & Algorithms', 'Manual Testing', 'UI Testing', 'Test Case Design', 'GitHub Issue Tracking', 'Agile Workflow', 'Basic Automation', 'CI/CD pipelines', 'Performance Profiling']
+    languages: ['Swift 6', 'Java', 'Python', 'JavaScript', 'C++', 'SQL'],
+    frameworks: ['SwiftUI', 'UIKit', 'Combine', 'WidgetKit', 'MapKit', 'Firebase', 'REST APIs', 'MXMerchant SDK', 'AnyPay SDK'],
+    databases: ['Firestore', 'Firebase Realtime Database', 'MongoDB', 'MySQL', 'Apache Derby'],
+    tools: ['Xcode', 'Instruments', 'TestFlight', 'OSLog', 'Git', 'GitHub', 'Postman', 'Jira', 'Trello', 'Swift Package Manager', 'CocoaPods'],
+    practices: [
+      'MVVM', 'Protocol-Oriented Programming', 'Swift Concurrency & Actors',
+      'Modular SwiftUI Component Design', 'Offline-First Architecture',
+      'Multi-Tenant SaaS Design', 'Unit & UI Testing', 'Performance Profiling',
+      'TestFlight Beta Management', 'Agile/Scrum', 'Code Reviews',
+      'Responsive iPad & iPhone Layouts', 'Component-Driven Design Systems'
+    ]
   }
 
   const projects = [
     {
-      title: 'BillPay-POS (Healthcare Payment System)',
-      description: 'A production iPad payment application for medical clinics, processing 50,000+ patient transactions monthly with HIPAA-compliant security measures.',
-      technologies: ['Swift 6', 'SwiftUI', 'Firebase', 'MXMerchant', 'AnyPay SDK', 'REST APIs'],
+      title: 'BillPay-POS — iPad Payment System',
+      subtitle: 'Swift 6, SwiftUI, Firebase, GCP, MXMerchant, AnyPay · Sep 2025 – Nov 2025',
+      description: 'Built and owned end-to-end as the sole iOS developer — from the first line of architecture to TestFlight deployment. The app processes 50,000+ monthly transactions across multiple healthcare clinics on a multi-tenant SaaS platform.',
+      technologies: ['Swift 6', 'SwiftUI', 'Firebase', 'GCP', 'MXMerchant', 'AnyPay SDK'],
       features: [
-        'Multi-tenant SAAS architecture for clinic-level isolation',
-        'Third-party payment gateway integration (MXMerchant terminal, BBPOS Bluetooth reader)',
-        'Real-time Firestore sync with offline-first design',
-        'Full payment stack: terminal, Bluetooth, e-check, manual & saved methods',
-        'Secure patient authentication and data handling',
-        'Performance optimization via Instruments profiling'
+        'Integrated MXMerchant and AnyPay SDKs with BBPOS Bluetooth card readers for smooth card-present payments',
+        'Designed real-time Firestore sync with offline-first resilience so the app works even when connectivity drops',
+        'Built secure REST API pipelines and HIPAA-aware patient data handling',
+        'Reduced debugging time by 75% through structured OSLog logging and Instruments profiling',
+        'Owned the full TestFlight distribution pipeline and led internal QA before every release',
       ],
-      project_link: 'https://github.com/PKD118'
+      link: 'https://github.com/PKD118'
     },
     {
       title: 'Foodier! & Foodier Restaurant',
-      description: 'A full-stack iOS food delivery system with real-time data handling, authentication, and MapKit-based tracking services.',
+      subtitle: 'SwiftUI, Firebase, MapKit · 2023',
+      description: 'Built two companion apps — a customer-facing food delivery app and a restaurant management app — that work together in real time. Won 1st place at the iOS App Showcase 2023.',
       technologies: ['SwiftUI', 'Firebase', 'MapKit'],
-      achievements: ['First place in iOS App Showcase, 2023'],
+      achievements: ['1st Place — iOS App Showcase, 2023'],
       features: [
-        'Real-time order tracking',
-        'User authentication',
-        'Location-based services',
-        'Restaurant management system',
-        'Unit and UI testing'
+        'Designed a reusable SwiftUI component system from scratch',
+        'Integrated live map tracking via MapKit so customers could follow their order as it moved',
+        'All data flowed live through Firestore with no refresh needed',
+        'Built full Firebase authentication and user session management',
       ],
-      project_link: 'https://github.com/PKD118/Foodier'
+      link: 'https://github.com/PKD118/Foodier'
     },
     {
-      title: 'CfL (Care for Love)',
-      description: 'A health monitoring Android app focused on cardiac patient care with condition-driven suggestions.',
+      title: 'CfL — Care for Love',
+      subtitle: 'Java (Android), Firebase · 2023',
+      description: 'Built a health-monitoring app for cardiac patients where doctors and caregivers could track vitals in real time. Covered the full delivery cycle from code to documentation.',
       technologies: ['Java', 'Android', 'Firebase'],
       features: [
-        'Health condition monitoring',
-        'Personalized suggestions',
-        'Modular UI design',
-        'Firebase data management',
-        'Comprehensive testing'
+        'Firebase authentication and cloud sync so patient data stayed secure across devices',
+        'Real-time vitals tracking with condition-driven health suggestions',
+        'Comprehensive unit and UI tests with full UML documentation and polished mockups',
       ],
-      project_link: 'https://github.com/PKD118/CFL'
+      link: 'https://github.com/PKD118/CFL'
     },
     {
       title: 'Teleport 24/7',
-      description: 'Courier management platforms built with both Laravel and Java NetBeans for end-to-end delivery operations.',
+      subtitle: 'Java, Laravel, Apache Derby, MySQL · 2022',
+      description: 'Courier management platform built with both Laravel and Java NetBeans for end-to-end delivery operations. Won Best Java Project in the CSE 2200 course.',
       technologies: ['Java', 'Laravel', 'Apache Derby', 'MySQL'],
-      achievements: ['Best Java Project – CSE 2200 Course, 2022'],
+      achievements: ['Best Java Project — CSE 2200 Course, 2022'],
       features: [
-        'Cross-platform interface',
-        'Backend integration',
-        'Delivery operations management',
-        'Database connectivity',
-        'Multi-platform development'
+        'Cross-platform interface covering both web and desktop',
+        'Full backend integration with database connectivity',
+        'End-to-end delivery operations management system',
       ],
-      project_link: 'https://github.com/PKD118/Teleport-Java-App'
+      link: 'https://github.com/PKD118/Teleport-Java-App'
     }
   ]
 
+  const lab3Bullets = [
+    'Sole iOS developer for BillPay-POS, a healthcare payment system processing 50,000+ monthly transactions across multiple clinics on a multi-tenant SaaS platform',
+    'Architected and shipped scalable features using Swift 6, SwiftUI, and MVVM with clean REST API integration and robust JSON handling',
+    'Integrated MXMerchant terminal and BBPOS Bluetooth card reader, enabling smooth card-present payments at the point of care',
+    'Collaborated daily with cross-functional teams across the US in an Agile environment, coordinating with backend, QA, and product to ship reliable features on schedule',
+    'Cut debugging time by 75% by introducing structured OSLog-based logging and systematic Instruments profiling across the codebase',
+    'Owned the full TestFlight distribution pipeline and led internal QA cycles before every release to ensure production stability',
+  ]
+
+  const sahiTechBullets = [
+    "Built WidgetKit extensions and Apple Watch complications delivering glanceable, up-to-date information on Apple's most personal screens",
+    "Developed modular, reusable SwiftUI components and clean REST API data handlers that plugged directly into the team's existing architecture",
+    'Contributed to sprint planning, code reviews, and iterative feature delivery as part of a fully remote Agile team across multiple time zones',
+  ]
+
+  const cseBullets = [
+    'Coordinated operations and communication for over 500 students across technical, creative, and academic teams',
+    'Fostered collaboration across departments, developing strong skills in leadership, accountability, and team empathy',
+    'Built attention to detail, task tracking, and documentation practices — skills now applied directly in QA workflows',
+  ]
+
+  const BadgeList = ({ items, color }) => (
+    <div className="flex flex-wrap gap-2">
+      {items.map(s => <Badge key={s} className={color}>{s}</Badge>)}
+    </div>
+  )
+
+  const BulletList = ({ items }) => (
+    <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start">
+          <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+
+  const navClass = (item) =>
+    `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+      activeSection === item
+        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+        : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+    }`
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-slate-900 dark:text-white">Biduyt Das</h1>
+            <h1 className="text-xl font-bold text-slate-900 dark:text-white">Biduyt Das</h1>
+            <div className="hidden md:flex ml-10 items-baseline space-x-4">
+              {navItems.map(item => (
+                <button key={item} onClick={() => scrollToSection(item)} className={navClass(item)}>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </button>
+              ))}
             </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {['home', 'about', 'skills', 'projects', 'experience', 'contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      activeSection === item
-                        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                        : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
-                    }`}
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
             <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none"
-              >
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 rounded-md text-slate-700 dark:text-slate-300">
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
-              {['home', 'about', 'skills', 'projects', 'experience', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
-                    activeSection === item
-                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                      : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
-                  }`}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </button>
-              ))}
-            </div>
+          <div className="md:hidden px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
+            {navItems.map(item => (
+              <button key={item} onClick={() => scrollToSection(item)} className={`block w-full text-left ${navClass(item)}`}>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            ))}
           </div>
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section id="home" className="pt-16 min-h-screen flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <div className="mb-8">
-              <img 
-                src={userImage} 
-                alt="Biduyt Das"
-                className="w-32 h-32 mx-auto mb-6 rounded-full object-cover shadow-lg"
-              />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Biduyt Das</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
-              iOS Developer specialized in Swift, SwiftUI, and production-ready mobile applications. Currently building healthcare fintech solutions at LAB3 with expertise in payment integrations, real-time data systems, and scalable architecture.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                onClick={() => scrollToSection('projects')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg"
-              >
-                View My Work
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <img src={userImage} alt="Biduyt Das" className="w-32 h-32 mx-auto mb-6 rounded-full object-cover shadow-lg" />
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Biduyt Das</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
+            iOS Developer with hands-on production experience building a healthcare fintech POS system handling 50,000+ monthly transactions. Sole iOS developer at LAB3, taking full ownership from architecture to TestFlight deployment. Driven to grow fast, ship real products, and make a meaningful impact through technology.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg">
+              View My Work
+            </Button>
+            <Button variant="outline" className="px-8 py-3 text-lg" onClick={() => scrollToSection('contact')}>
+              Get In Touch
+            </Button>
+            <a href="/Biduyt_Das_CV.pdf" download>
+              <Button variant="outline" className="px-8 py-3 text-lg">
+                <Download className="h-4 w-4 mr-2" /> Download CV
               </Button>
-              <Button 
-                variant="outline" 
-                className="px-8 py-3 text-lg"
-                onClick={() => scrollToSection('contact')}
-              >
-                Get In Touch
-              </Button>
-            </div>
-            <div className="flex justify-center space-x-6 mt-8">
-              <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
-                <Mail className="h-6 w-6" />
-              </a>
-              <a href="https://www.linkedin.com/in/biduytdas/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="https://github.com/PKD118" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
-                <Github className="h-6 w-6" />
-              </a>
-            </div>
+            </a>
+          </div>
+          <div className="flex justify-center space-x-6 mt-8">
+            <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"><Mail className="h-6 w-6" /></a>
+            <a href="https://www.linkedin.com/in/biduytdas/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"><Linkedin className="h-6 w-6" /></a>
+            <a href="https://github.com/PKD118" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"><Github className="h-6 w-6" /></a>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section id="about" className="py-20 bg-white dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">About Me</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              I'm an iOS developer with production experience building secure, scalable mobile applications. Currently working as the sole iOS developer at LAB3, I specialize in Swift, SwiftUI, and MVVM architecture with hands-on experience in payment gateway integrations, third-party SDK implementations, and real-time data synchronization.
+              iOS developer with production experience building secure, scalable mobile applications. Currently the sole iOS developer at LAB3, specializing in Swift, SwiftUI, and MVVM architecture with deep experience in payment gateway integrations, third-party SDKs, and real-time data synchronization.
             </p>
           </div>
-          
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">My Journey</h3>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                As a Computer Science graduate from Khulna University of Engineering & Technology, I've progressed from academic projects to production iOS development. Currently at LAB3, I've built BillPay-POS—a healthcare payment system processing 50,000+ monthly transactions with multi-tenant architecture, payment gateway integrations, and offline-first design.
+                As a Computer Science graduate from Khulna University of Engineering & Technology, I've gone from building academic projects to owning a production iOS app that processes real payments for real patients every day. At LAB3 I built BillPay-POS from the ground up — architecture, integrations, testing, and deployment — entirely on my own.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                My technical foundation spans Swift 6, SwiftUI, Firebase, REST APIs, and payment SDKs (MXMerchant, AnyPay). I've delivered features including Bluetooth card reader integration, real-time Firestore sync, and secure authentication flows while collaborating with cross-functional backend and QA teams.
+                My core stack is Swift 6, SwiftUI, and Firebase, with deep experience in payment SDK integration (MXMerchant, AnyPay), Bluetooth card readers, real-time Firestore sync, and offline-first design. I've built secure authentication flows, robust REST API pipelines, and optimized performance with Instruments profiling.
+              </p>
+              <p className="text-slate-600 dark:text-slate-300 mb-4">
+                Outside of code I served as General Secretary of the CSE Association at KUET, coordinating operations for 500+ students across technical, creative, and academic teams. That experience shaped how I collaborate, communicate, and take ownership — skills I bring to every sprint.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-6">
-                I focus on writing clean, maintainable code and solving complex technical challenges—from Swift concurrency issues to payment processing reliability. My experience includes debugging production systems, performance profiling with Instruments, and managing TestFlight deployments.
+                I write about what I learn at{' '}
+                <a href="https://learnwithbiduyt.blogspot.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  learnwithbiduyt.blogspot.com
+                </a>
               </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center text-slate-600 dark:text-slate-300">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  Sylhet, Bangladesh
-                </div>
+              <div className="flex items-center text-slate-600 dark:text-slate-300">
+                <MapPin className="h-5 w-5 mr-2" /> Sylhet, Bangladesh
               </div>
             </div>
-            
             <div className="space-y-6">
               <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Education</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-slate-900 dark:text-white">BSc Engineering in CSE</h4>
-                      <p className="text-slate-600 dark:text-slate-300">Khulna University Of Engineering & Technology</p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">01/2020 - 08/2025</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 dark:text-white">Higher Secondary Certificate</h4>
-                      <p className="text-slate-600 dark:text-slate-300">MC College</p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">2017 - 2019</p>
-                    </div>
+                <CardHeader><CardTitle className="text-lg">Education</CardTitle></CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">BSc Engineering in CSE</h4>
+                    <p className="text-slate-600 dark:text-slate-300">Khulna University Of Engineering & Technology</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Jan 2020 – Sep 2025</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">Higher Secondary Certificate</h4>
+                    <p className="text-slate-600 dark:text-slate-300">MC College</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">2017 – 2019</p>
                   </div>
                 </CardContent>
               </Card>
-              
               <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Interests</CardTitle>
-                </CardHeader>
+                <CardHeader><CardTitle className="text-lg">Interests</CardTitle></CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {['Table Tennis','AI', 'Prompt Engineering', 'Software Architecture', 'Blogging', 'Team Collaboration', 'Agile Practices'].map((interest) => (
-                      <Badge key={interest} variant="secondary">{interest}</Badge>
+                    {['Table Tennis', 'AI', 'Prompt Engineering', 'Software Architecture', 'Blogging', 'Team Collaboration', 'Agile Practices'].map(i => (
+                      <Badge key={i} variant="secondary">{i}</Badge>
                     ))}
                   </div>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mt-4">
-                    Check out my blog: <a href="https://learnwithbiduyt.blogspot.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">learnwithbiduyt.blogspot.com</a>
-                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -289,144 +274,90 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills */}
       <section id="skills" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Skills & Technologies</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              A comprehensive overview of my technical skills and expertise across various domains.
+              A comprehensive overview of my technical skills across iOS development, backend integration, and engineering practices.
             </p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Programming Languages</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.languages.map((skill) => (
-                    <Badge key={skill} className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
+              <CardHeader><CardTitle className="text-lg">Programming Languages</CardTitle></CardHeader>
+              <CardContent><BadgeList items={skills.languages} color="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" /></CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Frameworks & Technologies</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.frameworks.map((skill) => (
-                    <Badge key={skill} className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
+              <CardHeader><CardTitle className="text-lg">Frameworks & SDKs</CardTitle></CardHeader>
+              <CardContent><BadgeList items={skills.frameworks} color="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" /></CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Databases</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.databases.map((skill) => (
-                    <Badge key={skill} className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
+              <CardHeader><CardTitle className="text-lg">Databases</CardTitle></CardHeader>
+              <CardContent><BadgeList items={skills.databases} color="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200" /></CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Tools & Platforms</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.tools.map((skill) => (
-                    <Badge key={skill} className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
+              <CardHeader><CardTitle className="text-lg">Tools & Platforms</CardTitle></CardHeader>
+              <CardContent><BadgeList items={skills.tools} color="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200" /></CardContent>
             </Card>
-            
-            <Card className="md:col-span-2 lg:col-span-2">
-              <CardHeader>
-                <CardTitle className="text-lg">Software Practices</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.practices.map((skill) => (
-                    <Badge key={skill} className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
+            <Card className="md:col-span-2">
+              <CardHeader><CardTitle className="text-lg">Engineering Practices</CardTitle></CardHeader>
+              <CardContent><BadgeList items={skills.practices} color="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200" /></CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects */}
       <section id="projects" className="py-20 bg-white dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Here are some of my notable projects that showcase my skills in full-stack development, mobile apps, and quality assurance.
+              Real shipped products — from production healthcare payment systems to award-winning iOS apps.
             </p>
           </div>
-          
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="h-full flex flex-col">
                 <CardHeader>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{project.subtitle}</p>
+                  <CardDescription className="mt-2">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col justify-between">
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-1">
-                        {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
-                        ))}
+                        {project.technologies.map(tech => <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>)}
                       </div>
                     </div>
-                    
                     <div>
                       <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Key Features:</h4>
                       <ul className="text-sm text-slate-600 dark:text-slate-300 space-y-1">
-                        {project.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            {feature}
+                        {project.features.map((f, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0" />
+                            {f}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    
                     {project.achievements && (
                       <div>
                         <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Achievements:</h4>
-                        <div className="space-y-1">
-                          {project.achievements.map((achievement, idx) => (
-                            <Badge key={idx} className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs">
-                              🏆 {achievement}
-                            </Badge>
-                          ))}
-                        </div>
+                        {project.achievements.map((a, i) => (
+                          <Badge key={i} className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs">🏆 {a}</Badge>
+                        ))}
                       </div>
                     )}
                   </div>
-                  {project.project_link && (
+                  {project.link && (
                     <div className="mt-4">
-                      <a href={project.project_link} target="_blank" rel="noopener noreferrer">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
                         <Button variant="outline" className="w-full">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          View Project
+                          <ExternalLink className="h-4 w-4 mr-2" /> View Project
                         </Button>
                       </a>
                     </div>
@@ -438,94 +369,48 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Experience */}
       <section id="experience" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Experience</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              My professional journey in software development, from healthcare payment systems to mobile app development.
+              My professional journey — from healthcare payment systems to remote Agile teams and student leadership.
             </p>
           </div>
-          
           <div className="max-w-3xl mx-auto space-y-8">
-            {/* Junior Software Engineer */}
+
+            {/* LAB3 */}
             <Card>
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="text-xl">Junior iOS Developer</CardTitle>
                     <CardDescription className="text-lg">LAB3</CardDescription>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Boston, MA (Remote)</p>
                   </div>
-                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">2024/09 – Present</Badge>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Sep 2025 – Present</Badge>
                 </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Sole iOS developer for BillPay-POS healthcare payment system processing 50,000+ monthly transactions
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Built scalable features using Swift 6, SwiftUI, MVVM with RESTful APIs and JSON integration
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Integrated third-party payment SDKs (MXMerchant terminal, BBPOS Bluetooth card reader)
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Collaborated with cross-functional backend, QA, and product teams for feature delivery
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Ensured application security, performance, and code quality through testing and profiling
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Managed TestFlight deployments and reduced debugging time by 75% using structured logging
-                  </li>
-                </ul>
-              </CardContent>
+              <CardContent><BulletList items={lab3Bullets} /></CardContent>
             </Card>
 
-            {/* iOS Developer Intern */}
+            {/* SahiTech */}
             <Card>
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="text-xl">iOS Developer Intern</CardTitle>
-                    <CardDescription className="text-lg">SahiTech Ltd. (Remote)</CardDescription>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh</p>
+                    <CardDescription className="text-lg">SahiTech Ltd.</CardDescription>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh (Remote)</p>
                   </div>
-                  <Badge variant="outline">2025/06 – 2025/08</Badge>
+                  <Badge variant="outline">Jun 2025 – Aug 2025</Badge>
                 </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Built WidgetKit extensions and lightweight Apple Watch complications
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Integrated Firebase Auth & Firestore with MVVM-based architecture
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Created modular UI components and implemented REST API data handlers
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Participated in Agile workflows with remote team members
-                  </li>
-                </ul>
-              </CardContent>
+              <CardContent><BulletList items={sahiTechBullets} /></CardContent>
             </Card>
-            
-            {/* General Secretary */}
+
+            {/* CSE Association */}
             <Card>
               <CardHeader>
                 <div className="flex justify-between items-start">
@@ -533,163 +418,100 @@ function App() {
                     <CardTitle className="text-xl">General Secretary</CardTitle>
                     <CardDescription className="text-lg">CSE Association, KUET</CardDescription>
                   </div>
-                  <Badge variant="outline">2023/04 – 2024/04</Badge>
+                  <Badge variant="outline">Apr 2023 – Apr 2024</Badge>
                 </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Coordinated operations and communication for over 500 students
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Fostered collaboration across technical, creative, and academic teams
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Cultivated skills in leadership, accountability, and team empathy
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Developed strong attention to detail, task tracking, and documentation practices—skills now applied in QA workflows
-                  </li>
+              <CardContent><BulletList items={cseBullets} /></CardContent>
+            </Card>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-20 bg-white dark:bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Get In Touch</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              Always open to discussing new opportunities, collaborations, or just a chat about iOS development.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Contact Information</CardTitle>
+                <CardDescription>Feel free to reach out through any of these channels</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {[
+                  { icon: <Mail className="h-5 w-5 text-blue-600" />, label: 'Email', value: 'pkdasbiduyt@gmail.com', href: 'mailto:pkdasbiduyt@gmail.com' },
+                  { icon: <Phone className="h-5 w-5 text-blue-600" />, label: 'Phone', value: '+8801637793410', href: 'tel:+8801637793410' },
+                  { icon: <Linkedin className="h-5 w-5 text-blue-600" />, label: 'LinkedIn', value: 'linkedin.com/in/biduytdas', href: 'https://www.linkedin.com/in/biduytdas/' },
+                  { icon: <Github className="h-5 w-5 text-blue-600" />, label: 'GitHub', value: 'github.com/PKD118', href: 'https://github.com/PKD118' },
+                ].map(({ icon, label, value, href }) => (
+                  <div key={label} className="flex items-center space-x-3">
+                    {icon}
+                    <div>
+                      <p className="font-medium text-slate-900 dark:text-white">{label}</p>
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">{value}</a>
+                    </div>
+                  </div>
+                ))}
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-5 w-5 text-blue-600" />
+                  <div>
+                    <p className="font-medium text-slate-900 dark:text-white">Location</p>
+                    <p className="text-slate-600 dark:text-slate-300">Sylhet, Bangladesh</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Let's Connect</CardTitle>
+                <CardDescription>Open to opportunities in iOS and mobile development</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-600 dark:text-slate-300">I'm currently looking for opportunities in:</p>
+                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                  {['iOS Development (Swift, SwiftUI)', 'Mobile App Development (Production-grade)', 'Healthcare & Fintech Applications', 'Remote & Cross-functional Teams'].map(item => (
+                    <li key={item} className="flex items-center">
+                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3" />{item}
+                    </li>
+                  ))}
                 </ul>
+                <div className="pt-4">
+                  <Button
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    onClick={() => window.open('mailto:pkdasbiduyt@gmail.com?subject=Portfolio Inquiry', '_blank')}
+                  >
+                    <Mail className="h-4 w-4 mr-2" /> Send Email
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white dark:bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Get In Touch</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl">Contact Information</CardTitle>
-                  <CardDescription>Feel free to reach out through any of these channels</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-white">Email</p>
-                      <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">
-                        pkdasbiduyt@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-white">Phone</p>
-                      <a href="tel:+8801637793410" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">
-                        +8801637793410
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-white">Location</p>
-                      <p className="text-slate-600 dark:text-slate-300">Sylhet, Bangladesh</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Linkedin className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-white">LinkedIn</p>
-                      <a href="https://www.linkedin.com/in/biduytdas/" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">
-                        linkedin.com/in/biduytdas
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Github className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-white">GitHub</p>
-                      <a href="https://github.com/PKD118" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">
-                        github.com/PKD118
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl">Let's Connect</CardTitle>
-                  <CardDescription>I'm interested in opportunities in software development and quality assurance</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-slate-600 dark:text-slate-300">
-                    I'm currently looking for opportunities in:
-                  </p>
-                  <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      Mobile App Development (iOS, Android)
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      Software Development (Full-stack, Backend, Frontend)
-                    </li>
-                  </ul>
-                  
-                  <div className="pt-4">
-                    <Button 
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                      onClick={() => window.open('mailto:pkdasbiduyt@gmail.com?subject=Portfolio Inquiry', '_blank')}
-                    >
-                      <Mail className="h-4 w-4 mr-2" />
-                      Send Email
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-slate-950 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">Biduyt Das</h3>
-            <p className="text-slate-400 mb-6">iOS Developer | Swift & SwiftUI Specialist</p>
-            <div className="flex justify-center space-x-6 mb-8">
-              <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-400 hover:text-white transition-colors">
-                <Mail className="h-6 w-6" />
-              </a>
-              <a href="https://linkedin.com/in/biduytdas" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="https://github.com/PKD118" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
-                <Github className="h-6 w-6" />
-              </a>
-            </div>
-            <div className="border-t border-slate-800 pt-8">
-              <p className="text-slate-400 text-sm">
-                © 2024 Biduyt Das. Built with React and Tailwind CSS.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-bold mb-4">Biduyt Das</h3>
+          <p className="text-slate-400 mb-6">iOS Developer · Swift & SwiftUI · Healthcare Fintech</p>
+          <div className="flex justify-center space-x-6 mb-8">
+            <a href="mailto:pkdasbiduyt@gmail.com" className="text-slate-400 hover:text-white transition-colors"><Mail className="h-6 w-6" /></a>
+            <a href="https://linkedin.com/in/biduytdas" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"><Linkedin className="h-6 w-6" /></a>
+            <a href="https://github.com/PKD118" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"><Github className="h-6 w-6" /></a>
+          </div>
+          <div className="border-t border-slate-800 pt-8">
+            <p className="text-slate-400 text-sm">© 2025 Biduyt Das. Built with React and Tailwind CSS.</p>
           </div>
         </div>
       </footer>
+
     </div>
   )
 }
