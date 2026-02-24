@@ -319,34 +319,62 @@ function App() {
           </div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="h-full flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{project.subtitle}</p>
-                  <CardDescription className="mt-2">{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1 flex flex-col justify-between">
-                  <div className="space-y-4">
+              <div
+                key={index}
+                className="group relative h-[480px] rounded-xl overflow-hidden cursor-pointer shadow-md"
+                style={{ perspective: '1000px' }}
+              >
+                {/* Front — image with title */}
+                <div
+                  className="absolute inset-0 transition-all duration-500 ease-in-out"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    transform: 'rotateY(0deg)',
+                  }}
+                >
+                  <div
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-white text-xl font-bold mb-1">{project.title}</h3>
+                      <p className="text-slate-300 text-xs">{project.subtitle}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Back — content, revealed on hover */}
+                <div
+                  className="absolute inset-0 bg-white dark:bg-slate-800 p-5 flex flex-col justify-between
+                    opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0
+                    transition-all duration-500 ease-in-out overflow-y-auto"
+                >
+                  <div className="space-y-3">
                     <div>
-                      <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Technologies:</h4>
+                      <h3 className="text-slate-900 dark:text-white font-bold text-lg">{project.title}</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{project.subtitle}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">{project.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-xs text-slate-900 dark:text-white mb-1">Technologies:</h4>
                       <div className="flex flex-wrap gap-1">
                         {project.technologies.map(tech => <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>)}
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Key Features:</h4>
-                      <ul className="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                      <h4 className="font-semibold text-xs text-slate-900 dark:text-white mb-1">Key Features:</h4>
+                      <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1">
                         {project.features.map((f, i) => (
                           <li key={i} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0" />
+                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 mr-2 flex-shrink-0" />
                             {f}
                           </li>
                         ))}
                       </ul>
                     </div>
                     {project.achievements && (
-                      <div>
-                        <h4 className="font-semibold text-sm text-slate-900 dark:text-white mb-2">Achievements:</h4>
+                      <div className="flex flex-wrap gap-1">
                         {project.achievements.map((a, i) => (
                           <Badge key={i} className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs">🏆 {a}</Badge>
                         ))}
@@ -354,16 +382,14 @@ function App() {
                     )}
                   </div>
                   {project.link && (
-                    <div className="mt-4">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="w-full">
-                          <ExternalLink className="h-4 w-4 mr-2" /> View Project
-                        </Button>
-                      </a>
-                    </div>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-3">
+                      <Button variant="outline" className="w-full text-sm">
+                        <ExternalLink className="h-3.5 w-3.5 mr-2" /> View Project
+                      </Button>
+                    </a>
                   )}
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
