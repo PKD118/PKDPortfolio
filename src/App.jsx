@@ -60,6 +60,7 @@ function App() {
         'Reduced debugging time by 75% through structured OSLog logging and Instruments profiling',
         'Owned the full TestFlight distribution pipeline and led internal QA before every release',
       ],
+      image: '/images/billpay.jpg',
       link: 'https://github.com/PKD118'
     },
     {
@@ -74,6 +75,7 @@ function App() {
         'All data flowed live through Firestore with no refresh needed',
         'Built full Firebase authentication and user session management',
       ],
+      image: '/images/foodier.jpg',
       link: 'https://github.com/PKD118/Foodier'
     },
     {
@@ -86,6 +88,7 @@ function App() {
         'Real-time vitals tracking with condition-driven health suggestions',
         'Comprehensive unit and UI tests with full UML documentation and polished mockups',
       ],
+      image: '/images/cfl.jpg',
       link: 'https://github.com/PKD118/CFL'
     },
     {
@@ -99,6 +102,7 @@ function App() {
         'Full backend integration with database connectivity',
         'End-to-end delivery operations management system',
       ],
+      image: '/images/teleport.jpg',
       link: 'https://github.com/PKD118/Teleport-Java-App'
     }
   ]
