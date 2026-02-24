@@ -60,7 +60,6 @@ function App() {
         'Reduced debugging time by 75% through structured OSLog logging and Instruments profiling',
         'Owned the full TestFlight distribution pipeline and led internal QA before every release',
       ],
-      image: '/images/billpay.jpg',
       link: 'https://github.com/PKD118'
     },
     {
@@ -75,7 +74,6 @@ function App() {
         'All data flowed live through Firestore with no refresh needed',
         'Built full Firebase authentication and user session management',
       ],
-      image: '/images/foodier.jpg',
       link: 'https://github.com/PKD118/Foodier'
     },
     {
@@ -88,7 +86,6 @@ function App() {
         'Real-time vitals tracking with condition-driven health suggestions',
         'Comprehensive unit and UI tests with full UML documentation and polished mockups',
       ],
-      image: '/images/cfl.jpg',
       link: 'https://github.com/PKD118/CFL'
     },
     {
@@ -102,7 +99,6 @@ function App() {
         'Full backend integration with database connectivity',
         'End-to-end delivery operations management system',
       ],
-      image: '/images/teleport.jpg',
       link: 'https://github.com/PKD118/Teleport-Java-App'
     }
   ]
@@ -159,7 +155,12 @@ function App() {
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-xl font-bold text-slate-900 dark:text-white">Biduyt Das</h1>
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-xl font-bold text-slate-900 dark:text-white hover:opacity-75 transition-opacity"
+            >
+              Biduyt Das
+            </button>
             <div className="hidden md:flex ml-10 items-baseline space-x-4">
               {navItems.map(item => (
                 <button key={item} onClick={() => scrollToSection(item)} className={navClass(item)}>
