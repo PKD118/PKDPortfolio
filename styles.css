@@ -87,6 +87,12 @@ a:hover { color: var(--brand-shade); }
 .x9:hover {
     color:inherit !important;
 }
+/* project artwork sits whole inside its frame; zooms gently on hover */
+.x9:hover [data-shot] { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  [data-shot] { transition: none !important; }
+  .x9:hover [data-shot] { transform: none; }
+}
 .x10:hover {
     color:var(--fg-1) !important;
     transform:translateY(-2px) !important;
