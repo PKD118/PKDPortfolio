@@ -48,7 +48,7 @@
 </section>
 
 <section style="padding:0 32px 80px">
-  <div data-phones style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start">
+  <div data-g="4" data-phones style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start">
     <div data-reveal style="position:relative;border-radius:34px;background:#1a1a2e;padding:8px;box-shadow:0 20px 45px rgba(26,26,46,0.14)">
       <div style="position:relative;width:100%;aspect-ratio:1260 / 2736;border-radius:27px;overflow:hidden;background:var(--panel-deep)"><img src="../assets/screens/genfit-nutrition.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     </div>
@@ -66,13 +66,13 @@
 
 <section style="padding:0 32px 88px">
   <div style="max-width:1120px;margin:0 auto">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
+    <div data-g="4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
       <div data-reveal style="background:#aee0fa;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">42,309</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">lines across 459 files</div></div>
       <div data-reveal style="background:#b8e6d0;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">978</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">tests in 117 files</div></div>
       <div data-reveal style="background:#e5d9f2;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">1,219</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">exercises with video</div></div>
       <div data-reveal style="background:#ffd54f;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">Build 10</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">shipped to the App Store</div></div>
     </div>
-    <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+    <div data-g="4" data-pad data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
       <div><div style="font-weight:800;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:8px">My role</div><div style="font-weight:700;font-size:15.5px;line-height:1.45">Sole mobile developer — architecture, build, tests, release</div></div>
       <div><div style="font-weight:800;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:8px">Timeline</div><div style="font-weight:700;font-size:15.5px;line-height:1.45">Jun – Jul 2026 · 51 delivered cards</div></div>
       <div><div style="font-weight:800;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:8px">Stack</div><div style="font-weight:700;font-size:15.5px;line-height:1.45">Expo SDK 56 · React Native 0.85 · React 19 · New Architecture</div></div>
@@ -94,13 +94,13 @@
 
 <section style="padding:0 32px 88px">
   <div style="max-width:1120px;margin:0 auto">
-    <div data-reveal style="background:#1a1a2e;border-radius:24px;padding:48px;color:#ffffff;position:relative;overflow:hidden">
+    <div data-pad data-reveal style="background:#1a1a2e;border-radius:24px;padding:48px;color:#ffffff;position:relative;overflow:hidden">
       <div style="position:absolute;top:-180px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,176,255,0.22) 0%,rgba(26,26,46,0) 65%);pointer-events:none"></div>
       <div style="position:relative">
         <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px">The architecture</div>
       <h2 id="architecture" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;color:#ffffff;text-transform:lowercase;scroll-margin-top:170px">ten swappable service adapters</h2>
-        <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.75);font-weight:500;margin:0 0 32px;max-width:700px;text-wrap:pretty">Every external dependency resolves through its own <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;background:rgba(255,255,255,0.12);padding:2px 7px;border-radius:6px">mock | real | live</code> flag. Real adapters are lazily <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;background:rgba(255,255,255,0.12);padding:2px 7px;border-radius:6px">require()</code>d, so native modules never load in mock mode or under Jest. The whole app runs, and every test runs, with no backend and no device.</p>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:32px">
+        <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.75);font-weight:500;margin:0 0 32px;max-width:700px;text-wrap:pretty">Every external dependency resolves through its own <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;background:rgba(255,255,255,0.12);padding:2px 7px;border-radius:6px">mock | real | live</code> flag. Real adapters are lazily <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;background:rgba(255,255,255,0.12);padding:2px 7px;border-radius:6px">require()</code>d, so native modules never load in mock mode or under Jest. The whole app runs, and every test runs, with no backend and no device.</p>
+        <div data-g="5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:32px">
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:13.5px">API</div>
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:13.5px">Auth</div>
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:13.5px">Health</div>
@@ -112,14 +112,14 @@
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:13.5px">Terra</div>
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:13.5px">Wearables</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px">
             <h3 style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;margin:0 0 10px;color:#4fd1f5">Contract-first with Zod</h3>
             <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);font-weight:500;margin:0">3,168 lines of runtime schemas across 19 modules. Every network response is parsed before it reaches state, so a backend change surfaces as a typed error at the boundary — not a crash three screens later.</p>
           </div>
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px">
             <h3 style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;margin:0 0 10px;color:#4fd1f5">Session-identity pinning</h3>
-            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);font-weight:500;margin:0">Long-running async work re-checks the uid before <em>and after</em> every await, throwing <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:rgba(255,255,255,0.12);padding:1px 5px;border-radius:5px">session_changed</code> rather than writing one user's data into another's account after a fast switch.</p>
+            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);font-weight:500;margin:0">Long-running async work re-checks the uid before <em>and after</em> every await, throwing <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:rgba(255,255,255,0.12);padding:1px 5px;border-radius:5px">session_changed</code> rather than writing one user's data into another's account after a fast switch.</p>
           </div>
         </div>
       </div>
@@ -133,30 +133,30 @@
       <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Decisions I'd defend in an interview</div>
       <h2 id="decisions" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0;text-transform:lowercase;scroll-margin-top:150px">four problems, and what i did about them</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+    <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px">Offline</div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;line-height:1.2">The commit inversion</h3>
         <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0 0 12px"><strong style="color:var(--fg-1)">Problem:</strong> gym Wi-Fi drops mid-set. Awaiting Firestore meant the save spinner hung forever and the user lost the set.</p>
-        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> the local AsyncStorage write <em>is</em> the commit. The Firestore push runs detached and outlives the screen. A pending-sync banner tells the truth instead of a fake success, with foreground retry on <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">AppState</code> and drafts rejected on version or uid mismatch.</p>
+        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> the local AsyncStorage write <em>is</em> the commit. The Firestore push runs detached and outlives the screen. A pending-sync banner tells the truth instead of a fake success, with foreground retry on <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">AppState</code> and drafts rejected on version or uid mismatch.</p>
       </div>
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px">Health data</div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;line-height:1.2">Two upstream library bugs</h3>
         <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0 0 12px"><strong style="color:var(--fg-1)">Problem:</strong> HealthKit queries were silently returning the user's entire history, and writes were never actually authorized. Neither failed loudly.</p>
-        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> the date filter had to nest as <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">{date:{startDate,endDate}}</code> — top-level dates were ignored — and the auth key was <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">toShare</code>, not <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">toWrite</code>. Both found by reading the library source, not the docs.</p>
+        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> the date filter had to nest as <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">{date:{startDate,endDate}}</code> — top-level dates were ignored — and the auth key was <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">toShare</code>, not <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">toWrite</code>. Both found by reading the library source, not the docs.</p>
       </div>
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#a8e063;color:#2c4a0b;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px">Data integrity</div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;line-height:1.2">The phantom personal record</h3>
         <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0 0 12px"><strong style="color:var(--fg-1)">Problem:</strong> a fat-fingered 500 kg log permanently poisoned PR celebration. Deleting the entry didn't help — records only ever moved up.</p>
-        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">recomputeRecordFor</code> lets a deletion <em>lower</em> a record. The test is named after the bug: <em>"a fat-fingered 500kg no longer blocks confetti forever once deleted."</em></p>
+        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">recomputeRecordFor</code> lets a deletion <em>lower</em> a record. The test is named after the bug: <em>"a fat-fingered 500kg no longer blocks confetti forever once deleted."</em></p>
       </div>
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px">Security</div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;line-height:1.2">The rule I deleted</h3>
-        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0 0 12px"><strong style="color:var(--fg-1)">Problem:</strong> a Firestore wildcard rule was gated on a data field rather than a path — meaning any future collection named <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">entries</code> or <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">sessions</code> would be exposed by default.</p>
-        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> removed it and replaced it with owner-gated recursive rules plus a <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">superadmin | admin | staff | trainer</code> role layer. No access lost, a whole class of future exposure closed.</p>
+        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0 0 12px"><strong style="color:var(--fg-1)">Problem:</strong> a Firestore wildcard rule was gated on a data field rather than a path — meaning any future collection named <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">entries</code> or <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">sessions</code> would be exposed by default.</p>
+        <p style="font-size:15.5px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0"><strong style="color:var(--fg-1)">Fix:</strong> removed it and replaced it with owner-gated recursive rules plus a <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">superadmin | admin | staff | trainer</code> role layer. No access lost, a whole class of future exposure closed.</p>
       </div>
     </div>
   </div>
@@ -169,11 +169,11 @@
       <h2 id="ai" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 14px;text-transform:lowercase;scroll-margin-top:150px">four llm-backed features, each with a state machine that survives you leaving</h2>
       <p style="font-size:17px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">The hard part of shipping AI in a mobile app isn't the prompt — it's what happens when the user backgrounds the app halfway through a 30-second generation.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+    <div data-g="4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px">
         <div style="width:38px;height:38px;border-radius:13px;background:#aee0fa;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#07405c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11v11h-11z"></path><path d="M2 9h4.5"></path><path d="M17.5 9H22"></path><path d="M2 15h4.5"></path><path d="M17.5 15H22"></path></svg></div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:17px;margin:0 0 10px;line-height:1.25">Workout program generation</h3>
-        <p style="font-size:14.5px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">Writes an optimistic <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:5px">generating</code> doc before the network call — and is deliberately a plain function, not a hook, so it finishes even if you navigate away.</p>
+        <p style="font-size:14.5px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">Writes an optimistic <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:5px">generating</code> doc before the network call — and is deliberately a plain function, not a hook, so it finishes even if you navigate away.</p>
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px">
         <div style="width:38px;height:38px;border-radius:13px;background:#b8e6d0;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b3d22" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.7 1.3 3 3 3s3-1.3 3-3V2"></path><path d="M6 12v10"></path><path d="M18 2v20"></path><path d="M18 9c2 0 3-1.5 3-4s-1-3-3-3"></path></svg></div>
@@ -183,7 +183,7 @@
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px">
         <div style="width:38px;height:38px;border-radius:13px;background:#ffd54f;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5c4300" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></div>
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:17px;margin:0 0 10px;line-height:1.25">Food photo recognition</h3>
-        <p style="font-size:14.5px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">Claude vision behind a <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:5px">PRIMING → SCANNING → ANALYZING → CONFIRM</code> phase machine. The camera unmounts during analysis; guests are gated before the camera prompt, not after a 401.</p>
+        <p style="font-size:14.5px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">Claude vision behind a <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:5px">PRIMING → SCANNING → ANALYZING → CONFIRM</code> phase machine. The camera unmounts during analysis; guests are gated before the camera prompt, not after a 401.</p>
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px">
         <div style="width:38px;height:38px;border-radius:13px;background:#e5d9f2;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3d2a63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3"></path><path d="M20 16H7l3 3"></path></svg></div>
@@ -200,30 +200,30 @@
       <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Craft</div>
       <h2 id="craft" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0;text-transform:lowercase;scroll-margin-top:150px">the parts nobody asked for</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <div data-reveal style="background:var(--surface-2);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">A Code 128-B barcode encoder, from scratch</h3>
         <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">107-entry pattern table, mod-103 checksum, printable-ASCII validation, fail-loud on unencodable input. Rendered as SVG with a proper quiet zone and hard-coded black-on-white — because a themed barcode won't scan. Zero dependencies.</p>
       </div>
       <div data-reveal style="background:var(--surface-2);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">34-question adaptive medical intake</h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Each question has a stable ID, its own version, a Zod schema and an activation predicate. <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface);padding:1px 6px;border-radius:5px">pruneStaleAnswers</code> loops until stable, safety triage routes to eligible / pending / restricted / urgent with an emergency path, and there's a full v1→v2 document migration.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Each question has a stable ID, its own version, a Zod schema and an activation predicate. <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface);padding:1px 6px;border-radius:5px">pruneStaleAnswers</code> loops until stable, safety triage routes to eligible / pending / restricted / urgent with an emergency path, and there's a full v1→v2 document migration.</p>
       </div>
       <div data-reveal style="background:var(--surface-2);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">64 primitives and hand-rolled data-viz</h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Ring, ScoreRing, ArcGauge, Sparkline, LineChart (Catmull-Rom → cubic Bézier), Hypnogram, StageBars, MacroBar. Ring geometry is plain unit-tested JS; only <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface);padding:1px 6px;border-radius:5px">strokeDashoffset</code> animates, in a worklet.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Ring, ScoreRing, ArcGauge, Sparkline, LineChart (Catmull-Rom → cubic Bézier), Hypnogram, StageBars, MacroBar. Ring geometry is plain unit-tested JS; only <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface);padding:1px 6px;border-radius:5px">strokeDashoffset</code> animates, in a worklet.</p>
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">Liquid Glass, degraded three ways</h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">iOS 26 native <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">GlassView</code> where it exists, <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">BlurView</code> plus tint where it doesn't, and an opaque surface under reduce-transparency.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">iOS 26 native <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">GlassView</code> where it exists, <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">BlurView</code> plus tint where it doesn't, and an opaque surface under reduce-transparency.</p>
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">1,219 videos through a 3-stage pipeline</h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Deterministic catalog build, ffmpeg staging (hardlink mp4, lossless remux for <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">.mov</code> so ExoPlayer can play it), CDN-cached upload, three-way consistency verifier. Clips preload one at a time so there's no burst on gym Wi-Fi.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">Deterministic catalog build, ffmpeg staging (hardlink mp4, lossless remux for <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">.mov</code> so ExoPlayer can play it), CDN-cached upload, three-way consistency verifier. Clips preload one at a time so there's no burst on gym Wi-Fi.</p>
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px">
         <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;line-height:1.25">Accessibility that's asserted, not assumed</h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0"><code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">reduceMotion</code> branches in every animation, drag-and-drop reordering exposed as accessibility actions, state never carried by color alone, 44px touch minimum enforced by token <em>and</em> asserted in a test. A contract test computes WCAG relative luminance inline.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0"><code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:1px 6px;border-radius:5px">reduceMotion</code> branches in every animation, drag-and-drop reordering exposed as accessibility actions, state never carried by color alone, 44px touch minimum enforced by token <em>and</em> asserted in a test. A contract test computes WCAG relative luminance inline.</p>
       </div>
     </div>
   </div>
@@ -231,12 +231,12 @@
 
 <section style="padding:0 32px 88px">
   <div style="max-width:1120px;margin:0 auto">
-    <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:44px">
-      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:44px;align-items:center">
+    <div data-pad data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:44px">
+      <div data-g="split" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:44px;align-items:center">
         <div>
           <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Testing</div>
           <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.7rem,2.8vw,2.2rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;text-transform:lowercase">978 tests that read like a spec</h2>
-          <p style="font-size:16px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0">Mock and live adapters tested as a pair. Health Connect branches covered without a device. A timezone regression suite pinned to <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">TZ=America/Santiago</code>. Contract tests, not just behaviour tests.</p>
+          <p style="font-size:16px;line-height:1.68;color:var(--fg-2);font-weight:500;margin:0">Mock and live adapters tested as a pair. Health Connect branches covered without a device. A timezone regression suite pinned to <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px">TZ=America/Santiago</code>. Contract tests, not just behaviour tests.</p>
         </div>
         <div style="background:var(--panel-deep);border-radius:20px;padding:28px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14.5px;line-height:1.9;color:#a8e063">
           <div style="color:rgba(255,255,255,0.4);font-size:12.5px;margin-bottom:12px">// three real test names</div>
@@ -255,7 +255,7 @@
       <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Screens</div>
       <h2 id="screens" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0;text-transform:lowercase;scroll-margin-top:150px">a few more of the app</h2>
     </div>
-    <div data-phones style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px">
+    <div data-g="6" data-phones style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px">
       <div data-reveal>
         <div style="position:relative;border-radius:26px;background:#1a1a2e;padding:6px;box-shadow:0 10px 30px rgba(26,26,46,0.10)">
           <div style="position:relative;width:100%;aspect-ratio:1260 / 2736;border-radius:21px;overflow:hidden;background:var(--panel-deep)"><img src="../assets/screens/genfit-mealplan.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>

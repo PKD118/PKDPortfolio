@@ -38,7 +38,7 @@
 
 <section id="top" data-hero style="position:relative;padding:150px 32px 40px;scroll-margin-top:0">
   <div style="position:absolute;top:-140px;right:-120px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(179,229,252,0.5) 0%,rgba(179,229,252,0) 68%);pointer-events:none"></div>
-  <div style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.08fr 0.92fr;gap:56px;align-items:center">
+  <div data-g="split" style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.08fr 0.92fr;gap:56px;align-items:center">
     <div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
         <img src="assets/cv.jpeg" alt="Biduyt Das" style="width:38px;height:38px;border-radius:999px;object-fit:cover;border:2px solid var(--surface);box-shadow:0 1px 2px rgba(26,26,46,0.06)">
@@ -74,12 +74,12 @@
 </section>
 
 <section style="padding:44px 32px 96px">
-  <div data-reveal style="max-width:1120px;margin:0 auto;background:var(--surface-2);border-radius:24px;padding:34px 40px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center">
+  <div data-g="split" data-reveal style="max-width:1120px;margin:0 auto;background:var(--surface-2);border-radius:24px;padding:34px 40px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center">
     <div style="max-width:220px">
       <div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;line-height:1.15;color:var(--fg-1);text-transform:lowercase">in people's hands</div>
       <div style="font-weight:700;font-size:13.5px;color:var(--fg-3);margin-top:8px">Architecture through store release — mine end to end.</div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+    <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
       <div style="background:var(--surface);border-radius:20px;padding:22px 24px;display:flex;flex-direction:column;gap:14px;min-height:132px">
         <span style="display:inline-flex;align-self:flex-start;align-items:center;padding:4px 11px;border-radius:999px;background:#00e676;color:#0b3d22;font-weight:800;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase">App Store</span>
         <div style="margin-top:auto">
@@ -113,8 +113,8 @@
     </div>
 
     <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(26,26,46,0.06);margin-bottom:24px">
-      <div style="display:grid;grid-template-columns:1.05fr 0.95fr">
-        <div style="padding:44px">
+      <div data-g="split" style="display:grid;grid-template-columns:1.05fr 0.95fr">
+        <div data-pad style="padding:44px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
             <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#00e676;color:#0b3d22;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">Live on the App Store</span>
             <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Jun – Jul 2026</span>
@@ -139,7 +139,7 @@
         </div>
         <div data-feature-media style="position:relative;background:var(--surface-2);display:flex;align-items:flex-end;justify-content:center;padding:44px 24px 0;overflow:hidden">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(179,229,252,0.65) 0%,rgba(241,236,251,0) 62%);pointer-events:none"></div>
-          <div style="position:relative;width:288px;flex-shrink:0;border-radius:40px 40px 0 0;background:#1a1a2e;padding:9px 9px 0;box-shadow:0 -6px 40px rgba(26,26,46,0.18)">
+          <div data-phone-frame style="position:relative;width:288px;flex-shrink:0;border-radius:40px 40px 0 0;background:#1a1a2e;padding:9px 9px 0;box-shadow:0 -6px 40px rgba(26,26,46,0.18)">
             <div style="position:relative;width:100%;aspect-ratio:1260 / 2736;border-radius:32px 32px 0 0;overflow:hidden;background:var(--surface)">
               <img src="assets/screens/genfit-confirm-food.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#1a1a2e;pointer-events:none"></div>
@@ -149,8 +149,8 @@
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:34px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+    <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:34px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
           <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#b3e5fc;color:#07405c;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">Released to TestFlight</span>
           <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Nov 2025 – Apr 2026</span>
@@ -159,9 +159,9 @@
         <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">iPad point-of-sale for healthcare clinics</p>
         <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 20px;font-weight:500;text-wrap:pretty">70 cards, Figma to TestFlight, entirely mine. Card-present payments through the AnyPay SDK and a Chipper 3X Bluetooth reader, manual payments through the MXMerchant API — and per-clinic credentials isolated in Google Secret Manager so one tenant can never spend another's.</p>
         <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>Resolved Swift 6 strict concurrency and actor isolation across the codebase</li>
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>Firestore rules scoped so a clinic only ever reaches its own patients</li>
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>Removed the auth token from manual-payment requests — real attack surface, gone</li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Resolved Swift 6 strict concurrency and actor isolation across the codebase</span></li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Firestore rules scoped so a clinic only ever reaches its own patients</span></li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Removed the auth token from manual-payment requests — real attack surface, gone</span></li>
         </ul>
         <div style="display:flex;flex-wrap:wrap;gap:7px">
           <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Swift 6</span>
@@ -173,7 +173,7 @@
         </div>
       </div>
 
-      <div data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:34px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:34px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
           <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">Built in parallel</span>
           <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Jan 2026</span>
@@ -182,9 +182,9 @@
         <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">iPad clinical app · Firebase auth &amp; multi-business</p>
         <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 20px;font-weight:500;text-wrap:pretty">Built on my own in a single month, alongside BillPay-POS. Firebase auth with admin validation and disabled-account checks, and a multi-business selection system that fetches concurrently and skips itself entirely for single-business users.</p>
         <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>MVVM under Swift 6 concurrency — shipped with zero compiler warnings</li>
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>Smart RootView routing with a business-switch confirmation flow</li>
-          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span>Dual-rotation iPad layouts, spring animations, SF Symbol effects</li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">MVVM under Swift 6 concurrency — shipped with zero compiler warnings</span></li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Smart RootView routing with a business-switch confirmation flow</span></li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Dual-rotation iPad layouts, spring animations, SF Symbol effects</span></li>
         </ul>
         <div style="display:flex;flex-wrap:wrap;gap:7px">
           <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Swift 6</span>
@@ -196,9 +196,9 @@
       </div>
     </div>
 
-    <div data-reveal data-lift style="background:#1a1a2e;border-radius:24px;padding:40px 44px;color:#ffffff;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+    <div data-pad data-reveal data-lift style="background:#1a1a2e;border-radius:24px;padding:40px 44px;color:#ffffff;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
       <div style="position:absolute;top:-160px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(0,176,255,0.24) 0%,rgba(0,176,255,0) 65%);pointer-events:none"></div>
-      <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center">
+      <div data-g="2" style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center">
         <div>
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
             <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,0.14);color:#ffffff;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">QA automation</span>
@@ -206,9 +206,9 @@
           </div>
           <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0 0 6px;color:#ffffff">Harp platform</h3>
           <p style="font-weight:700;font-size:14px;color:#4fd1f5;margin:0 0 16px">Test automation &amp; payment defects · Lab3's healthcare SaaS</p>
-          <p style="font-size:15.5px;line-height:1.65;color:rgba(255,255,255,0.78);margin:0;font-weight:500;text-wrap:pretty">The Playwright suite was green on broken UI. I traced it back to AI-assisted edits silently renaming class names, IDs and UI text — so I fixed the class of problem rather than the tests: <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:rgba(255,255,255,0.12);padding:2px 6px;border-radius:6px">data-testid</code> standards, Cursor rules, and a GitHub Actions QA bot.</p>
+          <p style="font-size:15.5px;line-height:1.65;color:rgba(255,255,255,0.78);margin:0;font-weight:500;text-wrap:pretty">The Playwright suite was green on broken UI. I traced it back to AI-assisted edits silently renaming class names, IDs and UI text — so I fixed the class of problem rather than the tests: <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:rgba(255,255,255,0.12);padding:2px 6px;border-radius:6px">data-testid</code> standards, Cursor rules, and a GitHub Actions QA bot.</p>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:#ffffff">23</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.65);margin-top:4px">cards delivered</div></div>
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:#ffffff">24/7</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.65);margin-top:4px">Sentry monitoring</div></div>
           <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:#ffffff">13</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.65);margin-top:4px">payment defects fixed</div></div>
@@ -225,7 +225,7 @@
       <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:24px;margin:0;text-transform:lowercase">earlier on</h3>
       <span style="font-weight:600;font-size:15px;color:var(--fg-3)">university projects that taught me to ship</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <a class="x9" href="https://github.com/PKD118/Foodier" target="_blank" rel="noopener" data-reveal data-lift style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;color:inherit;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
         <div style="height:150px;background-image:url(assets/foodier.jpg);background-size:cover;background-position:center"></div>
         <div style="padding:22px 24px 24px">
@@ -264,7 +264,7 @@
       <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1.08;letter-spacing:-0.02em;margin:0 0 14px;text-transform:lowercase">what i actually reach for</h2>
       <p style="font-size:17px;line-height:1.6;color:var(--fg-2);font-weight:500;max-width:620px;margin:0">Everything here is something I've shipped with, not something I've read about.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px">
         <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px"><span style="width:34px;height:34px;border-radius:12px;background:#aee0fa;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07405c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M12 18h.01"></path></svg></span><h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0">iOS &amp; native</h3></div>
         <div style="display:flex;flex-wrap:wrap;gap:7px">
@@ -365,7 +365,7 @@
 
       <div data-reveal style="position:relative;margin-bottom:28px">
         <span style="position:absolute;left:-36px;top:34px;width:16px;height:16px;border-radius:999px;background:var(--brand);border:3px solid var(--bg);box-shadow:0 0 0 2px #b3e5fc"></span>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
+        <div data-pad style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:18px">
             <div>
               <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;margin:0 0 4px">Mobile Application Developer</h3>
@@ -374,25 +374,25 @@
             </div>
             <span style="padding:7px 14px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:800;font-size:12.5px;white-space:nowrap">Sep 2025 – Jul 2026</span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px">
+          <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px">
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px 16px"><div style="font-weight:800;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px">Sep – Apr</div><div style="font-weight:700;font-size:14.5px;color:var(--fg-1);line-height:1.35">Sole iOS dev — BillPay-POS &amp; HarpMD</div></div>
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px 16px"><div style="font-weight:800;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px">Mar – Jul</div><div style="font-weight:700;font-size:14.5px;color:var(--fg-1);line-height:1.35">QA automation — Harp platform</div></div>
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px 16px"><div style="font-weight:800;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px">Jun – Jul</div><div style="font-weight:700;font-size:14.5px;color:var(--fg-1);line-height:1.35">Sole mobile dev — GenFit, shipped</div></div>
           </div>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Sole mobile developer on GenFit — an AI health platform shipped to the App Store, 42,000 LOC of React Native behind 978 tests, built end to end in under two months.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Took BillPay-POS, a SwiftUI iPad point-of-sale for healthcare clinics, from Figma to TestFlight on my own — AnyPay, Chipper 3X readers, MXMerchant, and per-clinic credential isolation.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Integrated Apple HealthKit and Android Health Connect behind one validated contract — 10 read metrics, 7 write types — including workarounds for two upstream library defects.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Root-caused silently failing Playwright suites and fixed the class of problem with <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">data-testid</code> standards, Cursor rules and a GitHub Actions QA bot.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Owned release engineering across two App Store products — code signing, EAS profiles, fingerprint OTA versioning, TestFlight, and a successful resubmission after an over-declared-capabilities rejection.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span>Worked daily with distributed backend, QA and product teams across US and Bangladesh time zones in an Agile/Scrum setup.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Sole mobile developer on GenFit — an AI health platform shipped to the App Store, 42,000 LOC of React Native behind 978 tests, built end to end in under two months.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Took BillPay-POS, a SwiftUI iPad point-of-sale for healthcare clinics, from Figma to TestFlight on my own — AnyPay, Chipper 3X readers, MXMerchant, and per-clinic credential isolation.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Integrated Apple HealthKit and Android Health Connect behind one validated contract — 10 read metrics, 7 write types — including workarounds for two upstream library defects.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Root-caused silently failing Playwright suites and fixed the class of problem with <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">data-testid</code> standards, Cursor rules and a GitHub Actions QA bot.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Owned release engineering across two App Store products — code signing, EAS profiles, fingerprint OTA versioning, TestFlight, and a successful resubmission after an over-declared-capabilities rejection.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Worked daily with distributed backend, QA and product teams across US and Bangladesh time zones in an Agile/Scrum setup.</span></li>
           </ul>
         </div>
       </div>
 
       <div data-reveal style="position:relative;margin-bottom:28px">
         <span style="position:absolute;left:-36px;top:34px;width:16px;height:16px;border-radius:999px;background:var(--surface);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--border)"></span>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
+        <div data-pad style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:16px">
             <div>
               <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;margin:0 0 4px">iOS Developer Intern</h3>
@@ -401,16 +401,16 @@
             <span style="padding:7px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:800;font-size:12.5px;white-space:nowrap">Jun – Aug 2025</span>
           </div>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span>Built WidgetKit extensions and Apple Watch complications for glanceable data.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span>Developed modular, reusable SwiftUI components and REST API data handlers that plugged into the team's existing architecture.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span>Took part in sprint planning and code reviews on a fully remote team across time zones.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Built WidgetKit extensions and Apple Watch complications for glanceable data.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Developed modular, reusable SwiftUI components and REST API data handlers that plugged into the team's existing architecture.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Took part in sprint planning and code reviews on a fully remote team across time zones.</span></li>
           </ul>
         </div>
       </div>
 
       <div data-reveal style="position:relative">
         <span style="position:absolute;left:-36px;top:34px;width:16px;height:16px;border-radius:999px;background:var(--surface);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--border)"></span>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
+        <div data-pad style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:16px">
             <div>
               <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;margin:0 0 4px">General Secretary</h3>
@@ -419,8 +419,8 @@
             <span style="padding:7px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:800;font-size:12.5px;white-space:nowrap">Apr 2023 – Apr 2024</span>
           </div>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span>Coordinated operations and communication for over 500 students across technical, creative and academic teams.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span>Built the documentation and task-tracking habits I still lean on in release and QA work.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Coordinated operations and communication for over 500 students across technical, creative and academic teams.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Built the documentation and task-tracking habits I still lean on in release and QA work.</span></li>
           </ul>
         </div>
       </div>
@@ -430,8 +430,8 @@
 
 <section id="about" style="padding:0 32px 100px;scroll-margin-top:100px">
   <div style="max-width:1120px;margin:0 auto">
-    <div style="background:var(--surface-2);border-radius:24px;padding:56px">
-      <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start">
+    <div data-pad style="background:var(--surface-2);border-radius:24px;padding:56px">
+      <div data-g="split" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start">
         <div data-reveal>
           <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">About</div>
           <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.08;letter-spacing:-0.02em;margin:0 0 24px;text-transform:lowercase">how i got here</h2>
@@ -475,7 +475,7 @@
 
 <section id="contact" style="position:relative;background:var(--panel-deep);padding:96px 32px;overflow:hidden;scroll-margin-top:0">
   <div style="position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:900px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,176,255,0.20) 0%,rgba(0,230,118,0.07) 45%,rgba(16,20,24,0) 70%);pointer-events:none"></div>
-  <div style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.02fr 0.98fr;gap:64px;align-items:center">
+  <div data-g="split" style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.02fr 0.98fr;gap:64px;align-items:center">
     <div data-reveal>
       <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px">Contact</div>
       <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(2rem,3.6vw,3rem);line-height:1.06;letter-spacing:-0.02em;margin:0 0 18px;color:#ffffff;text-transform:lowercase;text-wrap:balance">let's build something that ships</h2>
