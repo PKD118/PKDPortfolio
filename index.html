@@ -26,7 +26,6 @@
   <a class="x2" href="#top" style="padding:9px 16px 9px 14px;border-radius:999px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:14.5px;color:var(--fg-1)">Biduyt Das</a>
   <span data-navhide style="width:1px;height:20px;background:var(--border);margin:0 6px"></span>
   <a href="#work" data-navhide data-navlink="work" style="padding:9px 15px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Work</a>
-  <a class="x3" href="genfit/" style="display:inline-flex;align-items:center;gap:5px;padding:9px 15px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Case study<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
   <a href="#skills" data-navhide data-navlink="skills" style="padding:9px 15px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Skills</a>
   <a href="#experience" data-navhide data-navlink="experience" style="padding:9px 15px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Experience</a>
   <a href="#about" data-navhide data-navlink="about" style="padding:9px 15px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">About</a>
@@ -155,72 +154,86 @@
       </div>
     </div>
 
-    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:40px 44px;margin-bottom:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
-      <div data-g="2" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:start">
+    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px 32px;margin-bottom:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-g="2" style="display:grid;grid-template-columns:1.35fr 0.65fr;gap:30px;align-items:start">
         <div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
             <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#b3e5fc;color:#07405c;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">Released to TestFlight</span>
             <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Nov 2025 – Apr 2026</span>
           </div>
           <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0 0 6px">BillPay-POS</h3>
-          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">Multi-tenant iPad point-of-sale for healthcare clinics</p>
-          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 20px;font-weight:500;text-wrap:pretty">Figma to TestFlight, entirely mine. Clinic staff take payments at the point of care three ways: tap and chip on an MXMerchant terminal, a Chipper 3X Bluetooth reader through the AnyPay SDK, or manually as cash, check or keyed card. It handles protected health information, so the constraints that shaped it were regulatory before they were technical.</p>
-          <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">A three-step terminal flow: initiate returns a replay ID, then poll every 3s up to 120s with a 70-second grace period before errors count, then finalize</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Bridged the AnyPay Objective-C card-reader callback into async/await with <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">withCheckedThrowingContinuation</code></span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Six audited actions on every touch of patient data, into an append-only log that's never deleted</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Per-clinic payment credentials resolved server-side from Google Secret Manager, so one tenant can never spend another's</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Critical-operation guards, so a 60-minute regulatory session expiry can't interrupt a card swipe</span></li>
+          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 12px">Multi-tenant iPad point-of-sale for healthcare clinics</p>
+          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 15px;font-weight:500;text-wrap:pretty">Figma to TestFlight, entirely mine. Clinic staff take payments at the point of care three ways: tap and chip on an MXMerchant terminal, a Chipper 3X Bluetooth reader through the AnyPay SDK, or manually as cash, check or keyed card. It handles protected health information, so the constraints that shaped it were regulatory before they were technical.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">A three-step terminal flow: initiate returns a replay ID, then poll every 3s up to 120s, with a 70-second grace period before errors count</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Bridged the AnyPay Objective-C card-reader callback into async/await with <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">withCheckedThrowingContinuation</code></span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Six audited actions on every touch of patient data, into an append-only log that's never deleted</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Per-clinic payment credentials resolved server-side from Google Secret Manager, so one tenant can never spend another's</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Critical-operation guards, so a 60-minute regulatory session expiry can't interrupt a card swipe</span></li>
           </ul>
-          <div style="display:flex;flex-wrap:wrap;gap:7px">
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Swift 6</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">SwiftUI</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Swift Concurrency</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Obj-C interop</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">AnyPay SDK</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">MXMerchant</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Secret Manager</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">PDFKit</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">OSLog · Instruments</span>
-          </div>
         </div>
-        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">3</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">payment methods</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">6</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">audited actions on patient data</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:22px;color:var(--fg-1)">Multi-tenant</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">per-clinic credential isolation</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:22px;color:var(--fg-1)">TestFlight</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">released, sole developer</div></div>
+        <div>
+          <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:14px">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">3</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">payment methods</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">6</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">audited actions on patient data</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:20px;color:var(--fg-1)">Multi-tenant</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">per-clinic credential isolation</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:20px;color:var(--fg-1)">TestFlight</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">released, sole developer</div></div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:16px">
+            <div style="font-weight:800;font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--fg-3);margin-bottom:10px">Built with</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">Swift 6</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">SwiftUI</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">Swift Concurrency</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11.5px">Obj-C interop</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11.5px">AnyPay SDK</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11.5px">MXMerchant</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11.5px">Chipper 3X</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">Firestore</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">Secret Manager</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">OSLog</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">Instruments</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:40px 44px;margin-bottom:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
-      <div data-g="2" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:start">
+    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px 32px;margin-bottom:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-g="2" style="display:grid;grid-template-columns:1.35fr 0.65fr;gap:30px;align-items:start">
         <div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
             <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#ffd54f;color:#5c4300;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">watchOS · WidgetKit</span>
             <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Jun – Sep 2025</span>
           </div>
           <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0 0 6px">Watch Faces Daily</h3>
-          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">Apple Watch faces &amp; complications · AppDrove, via SahiTech</p>
-          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 20px;font-weight:500;text-wrap:pretty">A shipping watchOS app with a catalogue of face designs, where I owned the France, India and Shapes collections end to end. Every layout is written as a ratio of <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">GeometryReader</code> size rather than fixed points, so one view renders correctly on every watch size instead of one design per device class.</p>
-          <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">53 shipping widgets in 11 WidgetKit bundles, across accessoryCircular and accessoryRectangular</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Live HealthKit, WeatherKit, battery and moon-phase data on a <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">TimelineProvider</code> budget</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Hand-rolled SwiftUI drawing: rotated week ring, knobbed progress arcs, moon phases</span></li>
+          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 12px">Apple Watch faces &amp; complications · AppDrove, via SahiTech</p>
+          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 15px;font-weight:500;text-wrap:pretty">A shipping watchOS app with a catalogue of face designs, where I owned the France, India and Shapes collections end to end. Every layout is written as a ratio of <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">GeometryReader</code> size rather than fixed points, so one view renders correctly on every watch size instead of one design per device class.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">53 shipping widgets in 11 WidgetKit bundles, across accessoryCircular and accessoryRectangular</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Live HealthKit, WeatherKit, battery and moon-phase data on a <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">TimelineProvider</code> budget</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Hand-rolled SwiftUI drawing: rotated week ring, knobbed progress arcs, moon phases</span></li>
           </ul>
-          <div style="display:flex;flex-wrap:wrap;gap:7px">
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">watchOS</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">WidgetKit</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">SwiftUI Canvas</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">HealthKit</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">WeatherKit</span>
-          </div>
         </div>
-        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">53</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">widgets shipped</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">76</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">complication views</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">7</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">full watch faces</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">41–49mm</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">one layout, every size</div></div>
+        <div>
+          <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:14px">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">53</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">widgets shipped</div></div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">76</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">complication views</div></div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">7</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">full watch faces</div></div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">41–49mm</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">one layout, every size</div></div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:16px">
+            <div style="font-weight:800;font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--fg-3);margin-bottom:10px">Built with</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">SwiftUI</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">GeometryReader</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">watchOS</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">WidgetKit</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">TimelineProvider</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">HealthKit</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">WeatherKit</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -255,37 +268,45 @@
       <span style="font-weight:600;font-size:15px;color:var(--fg-3)">a bilingual marketplace i built solo, in typescript</span>
     </div>
 
-    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:40px 44px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
-      <div data-g="2" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:start">
+    <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px 32px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+      <div data-g="2" style="display:grid;grid-template-columns:1.35fr 0.65fr;gap:30px;align-items:start">
         <div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
             <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase">Personal project · TypeScript</span>
             <span style="font-weight:700;font-size:13px;color:var(--fg-3)">Apr – Jun 2026</span>
           </div>
           <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0 0 6px">KRISHIBANDHU <span style="font-family:'Hind Siliguri',sans-serif;font-weight:600">· কৃষিবন্ধু</span></h3>
-          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">Bangla-first farmer-to-buyer marketplace · demo build, iOS &amp; Android</p>
-          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 20px;font-weight:500;text-wrap:pretty">Built on Firebase's free tier, which blocks Cloud Functions and Cloud Storage — so most of the interesting decisions here are workarounds I had to design and then write down honestly. Buyers browse and order cash-on-delivery, sellers list produce and manage orders, admins watch the platform. Every constraint and its migration path is documented in the repo.</p>
-          <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">No Cloud Storage, so photos are compressed and inlined in the product document — capped and enforced in security rules to stay under Firestore's per-document limit</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Single-pass compression kept overshooting on iPhone originals, so sellers couldn't list at all. Replaced with a six-step fallback that degrades quality rather than refusing — slower, so it got a progress modal</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Three roles behind one navigator, with the order state machine enforced server-side in security rules — not in the client, where either side could write any status</span></li>
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Two languages stay in sync because validation messages are translation keys resolved at render, not hardcoded English strings</span></li>
+          <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 12px">Bangla-first farmer-to-buyer marketplace · demo build, iOS &amp; Android</p>
+          <p style="font-size:15.5px;line-height:1.65;color:var(--fg-2);margin:0 0 15px;font-weight:500;text-wrap:pretty">Firebase's free tier blocks Cloud Functions and Cloud Storage. So most of the interesting decisions here are workarounds, and I had to design them and then be honest about them in writing. Buyers browse and order cash-on-delivery, sellers list produce and manage orders, admins watch the platform. Every constraint and its way out is written up in the repo.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">No Cloud Storage, so photos get compressed and inlined in the product doc, with size caps enforced in security rules as well as the client</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Single-pass compression overshot on iPhone originals, so sellers couldn't list at all. It now walks six steps and softens the photo instead of refusing it</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Three roles behind one navigator, with the order state machine enforced in security rules rather than the client, where either side could write any status</span></li>
+            <li style="display:flex;gap:11px;font-size:14px;line-height:1.5;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Two languages stay in sync because validation messages are translation keys resolved at render, not hardcoded strings</span></li>
           </ul>
-          <div style="display:flex;flex-wrap:wrap;gap:7px">
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">TypeScript</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Expo SDK 54</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">NativeWind</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Zustand</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">TanStack Query</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Zod</span>
-            <span style="padding:6px 13px;border-radius:999px;background:var(--surface-2);color:var(--fg-2);font-weight:700;font-size:12.5px">Firestore rules</span>
-          </div>
         </div>
-        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">21</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">screens</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--fg-1)">3</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">roles, one codebase</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:22px;color:var(--fg-1)">EN / BN</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">fully bilingual</div></div>
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;color:var(--fg-1)">iOS + Android</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">solo, start to finish</div></div>
+        <div>
+          <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:14px">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">21</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">screens</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:23px;color:var(--fg-1)">3</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">roles, one codebase</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:20px;color:var(--fg-1)">EN / BN</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">fully bilingual</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:17px;color:var(--fg-1)">iOS + Android</div><div style="font-size:13px;font-weight:700;color:var(--fg-3);margin-top:4px">solo, start to finish</div></div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:16px">
+            <div style="font-weight:800;font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--fg-3);margin-bottom:10px">Built with</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">TypeScript</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">React Native</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11.5px">Expo SDK 54</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">NativeWind</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">Zustand</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">TanStack Query</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11.5px">Zod</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">Firestore rules</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">i18n · EN/BN</span>
+              <span style="padding:5px 11px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11.5px">EAS Build</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -311,7 +332,7 @@
           <p style="font-weight:700;font-size:14px;color:var(--brand);margin:0 0 16px">Two companion iOS apps, one Firebase backend</p>
           <p style="font-size:15px;line-height:1.65;color:var(--fg-2);margin:0 0 18px;font-weight:500;text-wrap:pretty">A customer app and a restaurant app over a single backend, built for third-year iOS lab at KUET. The whole thing turns on one integer: an order's <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--surface-2);padding:2px 6px;border-radius:6px">status</code> field, five states from new to delivered, which both apps read and write.</p>
           <ul style="margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">The restaurant app's four tabs are four Firestore queries on that one field — accept moves an order to processing, then on the way, then the customer confirms delivery</span></li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">The restaurant app's four tabs are four Firestore queries on that one field. Accept moves an order to processing, then on the way, then the customer confirms delivery</span></li>
             <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Snapshot listeners on both sides, so a status change reaches the other app without a poll</span></li>
             <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">Live delivery tracking on MapKit through a custom location manager, Core Data for local persistence, dual-role Firebase Auth</span></li>
             <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.55;color:var(--fg-2);font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:8px;flex-shrink:0"></span><span style="flex:1;min-width:0">What I'd fix: those transitions are written client-side from both apps, so either one can set any status. Three years later, KRISHIBANDHU moved exactly that rule into security rules</span></li>
@@ -480,7 +501,7 @@
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:14px 16px"><div style="font-weight:800;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px">Jun – Jul</div><div style="font-weight:700;font-size:14.5px;color:var(--fg-1);line-height:1.35">Sole mobile dev · GenFit, shipped</div></div>
           </div>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Owned GenFit end to end as sole mobile developer — an AI health platform shipped to the App Store: 25 screens across iOS and Android behind 978 tests, built in under two months.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Owned GenFit end to end as sole mobile developer. An AI health platform shipped to the App Store: 25 screens across iOS and Android behind 978 tests, built in under two months.</span></li>
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Took BillPay-POS, a SwiftUI iPad point-of-sale for healthcare clinics, from Figma to TestFlight on my own: AnyPay, Chipper 3X readers, MXMerchant, and per-clinic credential isolation.</span></li>
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Integrated Apple HealthKit and Android Health Connect behind one validated contract (10 read metrics, 7 write types), including workarounds for two upstream library defects.</span></li>
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:var(--brand);margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Root-caused silently failing Playwright suites and fixed the class of problem with <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">data-testid</code> standards, Cursor rules and a GitHub Actions QA bot.</span></li>
@@ -502,7 +523,7 @@
           </div>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Shipped 53 WidgetKit widgets in 11 bundles and 7 full watch faces for Watch Faces Daily, owning the France, India and Shapes collections end to end.</span></li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Made layouts resolution-independent — every dimension a ratio of <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">GeometryReader</code> size — so a single view renders correctly from 41mm to 49mm instead of one design per device.</span></li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Made layouts resolution-independent by writing every dimension as a ratio of <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">GeometryReader</code> size, so a single view renders correctly from 41mm to 49mm instead of one design per device.</span></li>
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Wired HealthKit, WeatherKit, battery and moon-phase data into complications on a <code style="white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--surface-2);padding:2px 6px;border-radius:6px">TimelineProvider</code> refresh budget, and built reusable SwiftUI drawing components the rest of the team reused across collections.</span></li>
             <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--fg-2);font-weight:500"><span style="width:7px;height:7px;border-radius:999px;background:#8a8a98;margin-top:9px;flex-shrink:0"></span><span style="flex:1;min-width:0">Took part in sprint planning and code reviews on a fully remote team across time zones.</span></li>
           </ul>
