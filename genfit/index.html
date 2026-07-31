@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GenFit · Case Study · Biduyt Das</title>
-<meta name="description" content="An AI fitness app for iOS and Android, built solo in two months. 42,309 lines, 978 tests, shipped to the App Store.">
+<meta name="description" content="An AI fitness app for iOS and Android, built solo in two months. 25 screens, 978 tests, shipped to the App Store.">
 <meta property="og:title" content="GenFit · Case Study · Biduyt Das">
-<meta property="og:description" content="An AI fitness app for iOS and Android, built solo in two months. 42,309 lines, 978 tests, shipped to the App Store.">
+<meta property="og:description" content="An AI fitness app for iOS and Android, built solo in two months. 25 screens, 978 tests, shipped to the App Store.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
   <div style="position:relative;max-width:900px;margin:0 auto;text-align:center">
     <div style="display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border-radius:999px;background:#00e676;color:#0b3d22;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:22px">Case study · Live on the App Store</div>
     <h1 style="font-family:'Fredoka',ui-rounded,system-ui,sans-serif;font-weight:700;font-size:clamp(2.6rem,5vw,4rem);line-height:1.04;letter-spacing:-0.02em;margin:0 0 20px;text-transform:lowercase;text-wrap:balance">genfit: an ai fitness app, built solo in two months</h1>
-    <p style="font-size:19px;line-height:1.65;color:var(--fg-2);margin:0 auto 34px;max-width:660px;font-weight:500;text-wrap:pretty">iOS and Android. 42,309 lines of production code, 978 tests, 1,219 exercise videos, four LLM-backed features, plus an architecture that let me build the whole app before the backend existed.</p>
+    <p style="font-size:19px;line-height:1.65;color:var(--fg-2);margin:0 auto 34px;max-width:660px;font-weight:500;text-wrap:pretty">iOS and Android from one codebase. 25 screens, 978 tests, 1,219 exercise videos, four LLM-backed features, plus an architecture that let me build the whole app before the backend existed.</p>
     <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
       <a class="x5 x15" href="https://apps.apple.com/us/app/genfit-gym-fitness/id6790164670" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;color:#ffffff;background:var(--brand);padding:15px 26px;border-radius:16px;box-shadow:0 4px 0 var(--brand-shade);transition:box-shadow .12s,transform .12s"><svg width="16" height="16" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>Download GenFit</a>
     </div>
@@ -67,8 +67,8 @@
 <section style="padding:0 32px 88px">
   <div style="max-width:1120px;margin:0 auto">
     <div data-g="4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
-      <div data-reveal style="background:#aee0fa;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">42,309</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">lines across 459 files</div></div>
-      <div data-reveal style="background:#b8e6d0;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">978</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">tests in 117 files</div></div>
+      <div data-reveal style="background:#aee0fa;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">25</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">screens · 64 UI primitives</div></div>
+      <div data-reveal style="background:#b8e6d0;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">978</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">automated tests</div></div>
       <div data-reveal style="background:#e5d9f2;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">1,219</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">exercises with video</div></div>
       <div data-reveal style="background:#ffd54f;border-radius:24px;padding:24px"><div style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#18181b">Build 10</div><div style="font-weight:700;font-size:13.5px;color:rgba(26,26,46,0.7);margin-top:8px">shipped to the App Store</div></div>
     </div>
@@ -115,7 +115,7 @@
         <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px">
             <h3 style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;margin:0 0 10px;color:#4fd1f5">Contract-first with Zod</h3>
-            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);font-weight:500;margin:0">3,168 lines of runtime schemas across 19 modules. Every network response is parsed before it reaches state, so a backend change surfaces as a typed error at the boundary, not a crash three screens later.</p>
+            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);font-weight:500;margin:0">Runtime schemas across 19 modules. Every network response is parsed before it reaches state, so a backend change surfaces as a typed error at the boundary, not a crash three screens later.</p>
           </div>
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px">
             <h3 style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;margin:0 0 10px;color:#4fd1f5">Session-identity pinning</h3>
