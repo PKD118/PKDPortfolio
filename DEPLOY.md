@@ -7,7 +7,10 @@ Static site. No build step, no dependencies.
     ├── genfit/index.html   GenFit case study  ->  /genfit
     ├── styles.css
     ├── app.js
-    ├── assets/             photo, project images, 10 GenFit screens, CV pdf, favicon
+    ├── favicon.ico         icons live at the root: browsers request /favicon.ico
+    ├── favicon.svg           implicitly, and root files skip the immutable
+    ├── apple-touch-icon.png  Cache-Control set on /assets/
+    ├── assets/             photo, project images, 10 GenFit screens, CV pdf
     └── vercel.json
 
 ## 1. Put it in the repo on `main`
