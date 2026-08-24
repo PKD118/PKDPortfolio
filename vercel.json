@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/flutter-cv",
+      "destination": "/assets/Biduyt_Das_Flutter.pdf"
+    },
+    {
       "source": "/v1",
       "destination": "REPLACE_WITH_OLD_DEPLOYMENT_URL"
     },
