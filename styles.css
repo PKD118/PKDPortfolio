@@ -32,7 +32,7 @@
   [data-g="3"], [data-g="4"], [data-g="5"], [data-g="6"] { grid-template-columns: 1fr !important; }
   [data-phones] { grid-template-columns: repeat(2,1fr) !important; gap: 14px !important; }
   [data-pad] { padding: 22px !important; }
-  [data-feature-media] { padding: 28px 20px 0 !important; }
+  [data-feature-media] { padding: 28px 20px !important; }
   [data-phone-frame] { width: 100% !important; max-width: 280px !important; }
   [data-contact-row] { padding-left: 18px !important; padding-right: 18px !important; }
   [data-navhide-sm] { display: none !important; }

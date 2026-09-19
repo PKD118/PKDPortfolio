@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BillPay-POS · Compliance &amp; Kiosk Spec · Biduyt Das</title>
+<meta name="description" content="How a clinic's existing web app became a PCI- and HIPAA-compliant iPad point-of-sale with a self-service patient kiosk, written as the specs it was actually built from.">
+<meta property="og:title" content="BillPay-POS · Compliance &amp; Kiosk Spec · Biduyt Das">
+<meta property="og:description" content="How a clinic's existing web app became a PCI- and HIPAA-compliant iPad point-of-sale with a self-service patient kiosk, written as the specs it was actually built from.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#0284c7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>(function(){try{var t=localStorage.getItem('pkd-portfolio-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+<div style="font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;color:var(--fg-1);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden">
+
+<div style="position:fixed;top:0;left:0;right:0;height:3px;z-index:120;background:transparent;pointer-events:none"><div data-progress style="height:100%;width:0%;background:var(--brand);border-radius:0 3px 3px 0;transition:width .12s linear"></div></div>
+
+<a class="x1" href="#top" data-totop style="position:fixed;right:26px;bottom:26px;z-index:110;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:#1a1a2e;color:#ffffff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.03em;text-transform:uppercase;box-shadow:0 10px 30px rgba(26,26,46,0.22);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility .3s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"></path><path d="m5 12 7-7 7 7"></path></svg>Top</a>
+
+<nav data-nav style="position:fixed;top:18px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 32px);z-index:100;display:flex;align-items:center;gap:2px;padding:6px;white-space:nowrap;background:var(--nav-bg);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid var(--nav-border);border-radius:999px;box-shadow:0 4px 14px rgba(26,26,46,0.08)">
+  <a class="x3" href="../" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>All work</a>
+  <span data-navhide style="width:1px;height:20px;background:var(--border);margin:0 6px"></span>
+  <a class="x3" href="#kiosk" data-navhide style="padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Kiosk mode</a>
+  <a class="x3" href="#payments" data-navhide style="padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Payments</a>
+  <a class="x3" href="#audit" data-navhide style="padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Audit log</a>
+  <a class="x3" href="#tenancy" data-navhide style="padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--fg-2);transition:background .2s,color .2s">Tenancy</a>
+  <span style="width:1px;height:20px;background:var(--border);margin:0 6px"></span>
+  <button class="x3" data-theme-toggle type="button" aria-label="Toggle dark mode" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:0;background:transparent;color:var(--fg-2);cursor:pointer;padding:0;transition:background .2s,color .2s"><svg data-icon-sun width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path d="m19.1 4.9-1.4 1.4"></path></svg><svg data-icon-moon width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"></path></svg></button>
+  <a class="x4" href="../#contact" style="padding:9px 17px;border-radius:999px;font-weight:800;font-size:13.5px;background:#1a1a2e;color:#ffffff">Contact</a>
+</nav>
+
+<section id="top" style="position:relative;padding:140px 32px 56px">
+  <div style="position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:1000px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(179,229,252,0.45) 0%,rgba(250,250,250,0) 66%);pointer-events:none"></div>
+  <div style="position:relative;max-width:840px;margin:0 auto;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border-radius:999px;background:#b3e5fc;color:#07405c;font-weight:800;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:22px">Compliance &amp; kiosk spec · BillPay-POS</div>
+    <h1 style="font-family:'Fredoka',ui-rounded,system-ui,sans-serif;font-weight:700;font-size:clamp(2.3rem,4.4vw,3.5rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 20px;text-transform:lowercase;text-wrap:balance">a clinic's web app, rebuilt as an iPad and a kiosk, without breaking PCI or HIPAA</h1>
+    <p style="font-size:18px;line-height:1.65;color:var(--fg-2);margin:0 auto 16px;max-width:660px;font-weight:500;text-wrap:pretty">The clinics were already running this as a web app at the front desk. The ask was to move it to iPad, and add a kiosk mode next to it so a patient could pay without a staff member touching their card. There was no design file and no handoff, just the existing web app to study and a solo iOS developer to work out PCI and HIPAA compliance well enough to pass clinic standards. Below are the real requirements behind the kiosk's patient-facing security, the payment flow, the audit log, and multi-tenant isolation, written as user stories with Given/When/Then acceptance criteria, the same way I handed them to myself before writing a line of code.</p>
+    <p style="font-size:13.5px;line-height:1.6;color:var(--fg-3);margin:0 auto;max-width:640px;font-weight:600">Clinic names, exact patient-data fields, and vendor contract terms are left out for confidentiality. The requirements and acceptance criteria themselves are real.</p>
+  </div>
+</section>
+
+<section style="padding:0 32px 88px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="margin-bottom:32px;max-width:780px">
+      <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Kiosk mode</div>
+      <h2 id="kiosk" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 14px;text-transform:lowercase;scroll-margin-top:150px">a patient paying alone is a different product than a staff member taking payment</h2>
+      <p style="font-size:17px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">Once a patient could check out with no staff member present, every failure mode I'd already handled for the front desk needed a second, stricter version for someone with no training and no one to ask.</p>
+    </div>
+    <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#ffb088;color:#5c2a10;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Nothing left behind</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a patient, I want the screen to show nothing about my payment the moment I walk away</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a transaction completes or is abandoned, <strong style="color:var(--fg-1)">when</strong> the patient steps away or the idle timer fires, <strong style="color:var(--fg-1)">then</strong> the screen resets to idle, no receipt or card detail left on display</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> the kiosk returns to idle, <strong style="color:var(--fg-1)">when</strong> the next patient approaches, <strong style="color:var(--fg-1)">then</strong> nothing about the previous patient's name, amount, or session is visible or recoverable on screen</li>
+        </ul>
+      </div>
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Not even staff</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a patient, I want my payment details inaccessible to clinic staff and to every other patient at the kiosk</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a kiosk transaction completes, <strong style="color:var(--fg-1)">when</strong> staff view the front-desk system, <strong style="color:var(--fg-1)">then</strong> they see that payment was made, never the card or transaction detail behind it</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a patient walks away mid-payment, <strong style="color:var(--fg-1)">when</strong> the next patient starts a session, <strong style="color:var(--fg-1)">then</strong> the previous session is fully torn down first, never paused or resumable by anyone else</li>
+        </ul>
+      </div>
+    </div>
+    <div data-reveal style="background:#1a1a2e;border-radius:24px;padding:36px 40px;color:#ffffff;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,176,255,0.22) 0%,rgba(26,26,46,0) 65%);pointer-events:none"></div>
+      <div style="position:relative">
+        <div style="font-weight:800;font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px">Failure modes I designed around before writing any code</div>
+        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="width:6px;height:6px;border-radius:999px;background:#4fd1f5;margin-top:8px;flex-shrink:0"></span><span style="font-size:14px;line-height:1.55;color:rgba(255,255,255,0.82);font-weight:500">A patient walks away mid-payment, on purpose or by accident</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="width:6px;height:6px;border-radius:999px;background:#4fd1f5;margin-top:8px;flex-shrink:0"></span><span style="font-size:14px;line-height:1.55;color:rgba(255,255,255,0.82);font-weight:500">A receipt or confirmation lingers on screen for the next patient to see</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="width:6px;height:6px;border-radius:999px;background:#4fd1f5;margin-top:8px;flex-shrink:0"></span><span style="font-size:14px;line-height:1.55;color:rgba(255,255,255,0.82);font-weight:500">The kiosk needs its own idle-reset timing, separate from the 60-minute staff session rule, since no one's watching it expire</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="width:6px;height:6px;border-radius:999px;background:#4fd1f5;margin-top:8px;flex-shrink:0"></span><span style="font-size:14px;line-height:1.55;color:rgba(255,255,255,0.82);font-weight:500">A patient can't read or act on an error state without a staff member nearby to help</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 32px 88px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="margin-bottom:32px;max-width:760px">
+      <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Payments</div>
+      <h2 id="payments" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 14px;text-transform:lowercase;scroll-margin-top:150px">two surfaces, one consistent record</h2>
+      <p style="font-size:17px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">A terminal and a Bluetooth reader at the desk, the same reader flow at the kiosk, and manual entry as the fallback everywhere, because clinics don't run identical hardware and not every patient wants a staff member involved.</p>
+    </div>
+    <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#b8e6d0;color:#0b3d22;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Payment routing</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a front-desk user, I want to take payment however the clinic is equipped that day, terminal, reader, or manual</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a Bluetooth reader is paired, <strong style="color:var(--fg-1)">when</strong> a payment starts, <strong style="color:var(--fg-1)">then</strong> the reader and the terminal are both offered, and manual entry stays available as a fallback</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a manual entry, <strong style="color:var(--fg-1)">when</strong> the front desk keys in card details, <strong style="color:var(--fg-1)">then</strong> the same audit entry is written as for a terminal or reader payment</li>
+        </ul>
+      </div>
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#ffd54f;color:#5c4300;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Offline handling</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a patient paying by card, I want a dropped connection mid-swipe to never double-charge or lose my payment</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> the network drops while a card payment is in flight, <strong style="color:var(--fg-1)">when</strong> the app detects the drop, <strong style="color:var(--fg-1)">then</strong> the transaction is cached locally, not silently retried</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a cached transaction exists, <strong style="color:var(--fg-1)">when</strong> the connection comes back, <strong style="color:var(--fg-1)">then</strong> it reconciles automatically, and the user sees the result, not a retry prompt</li>
+        </ul>
+      </div>
+    </div>
+    <div data-reveal style="margin-top:20px;background:var(--surface-2);border-radius:20px;padding:24px 28px">
+      <div style="font-weight:800;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:8px">Where the spec came from</div>
+      <p style="font-size:14.5px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0">There was no internal team for the AnyPay reader integration, so making it work meant getting on calls directly with AnywhereCommerce's own engineering team until the integration was clear enough to build against. None of it was documented anywhere the old web system had touched.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 32px 88px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="margin-bottom:32px;max-width:760px">
+      <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px">Audit log</div>
+      <h2 id="audit" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 14px;text-transform:lowercase;scroll-margin-top:150px">six actions, written down, never erased</h2>
+      <p style="font-size:17px;line-height:1.6;color:var(--fg-2);font-weight:500;margin:0">PCI and HIPAA both hold a payment log to the same bar: the audit requirement doesn't do anything on its own, it only works if it's structurally impossible to edit or delete.</p>
+    </div>
+    <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#aee0fa;color:#07405c;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Append-only</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a compliance reviewer, I want every touch of patient payment data logged, with no way for anyone to remove the record</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> any of the six defined actions on patient payment data occurs, <strong style="color:var(--fg-1)">when</strong> it happens, <strong style="color:var(--fg-1)">then</strong> it's written to an append-only log automatically, not on request</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a write to an existing log entry is attempted, <strong style="color:var(--fg-1)">when</strong> it reaches the data layer, <strong style="color:var(--fg-1)">then</strong> it's rejected regardless of the requesting user's role</li>
+        </ul>
+      </div>
+      <div data-pad data-reveal data-lift style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s">
+        <div style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:#e5d9f2;color:#3d2a63;font-weight:800;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px">Session vs. payment</div>
+        <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0 0 10px;line-height:1.3">As a compliance officer, I want sessions to expire on schedule without breaking a payment already in progress</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> a session hits its 60-minute regulatory expiry, <strong style="color:var(--fg-1)">when</strong> a card payment is currently in flight, <strong style="color:var(--fg-1)">then</strong> the payment finishes and the session expires immediately after</li>
+          <li style="font-size:14px;line-height:1.55;color:var(--fg-2);font-weight:500"><strong style="color:var(--fg-1)">Given</strong> no payment is in flight, <strong style="color:var(--fg-1)">when</strong> the 60 minutes elapse, <strong style="color:var(--fg-1)">then</strong> the session ends immediately, no grace period</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 32px 96px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-pad data-reveal style="background:#1a1a2e;border-radius:24px;padding:48px;color:#ffffff;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-180px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,176,255,0.22) 0%,rgba(26,26,46,0) 65%);pointer-events:none"></div>
+      <div style="position:relative">
+        <div style="font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px">Tenancy</div>
+        <h2 id="tenancy" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;color:#ffffff;text-transform:lowercase;scroll-margin-top:170px">one platform, clinics that can't touch each other's money</h2>
+        <p style="font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75);font-weight:500;margin:0 0 26px;max-width:680px">Multi-tenant credential isolation, designed with the backend team so a bug in one clinic's flow can't reach into another's.</p>
+        <div data-g="2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px">
+            <div style="font-weight:800;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px">As a clinic administrator</div>
+            <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.85);font-weight:500;margin:0">I want my clinic's funds and data fully isolated from every other clinic on the platform, so a bug or a bad actor elsewhere can't touch either.</p>
+            <ul style="margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px">
+              <li style="font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.7);font-weight:500"><strong style="color:#ffffff">Given</strong> two clinics share the platform, <strong style="color:#ffffff">when</strong> either processes a payment, <strong style="color:#ffffff">then</strong> no credential or credential-adjacent action can reference the other clinic's tenant ID</li>
+            </ul>
+          </div>
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px">
+            <div style="font-weight:800;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px">As a support engineer</div>
+            <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.85);font-weight:500;margin:0">I want to debug one clinic's issue without being able to see or touch data from any other clinic.</p>
+            <ul style="margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px">
+              <li style="font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.7);font-weight:500"><strong style="color:#ffffff">Given</strong> a support case for one clinic, <strong style="color:#ffffff">when</strong> logs are accessed, <strong style="color:#ffffff">then</strong> access is scoped to that clinic's tenant only</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 32px 120px">
+  <div style="max-width:760px;margin:0 auto;text-align:center">
+    <p style="font-size:17px;line-height:1.65;color:var(--fg-2);font-weight:500;margin:0 0 24px">This is the same shape I hand every spec in, staff-facing or patient-facing: user story first, acceptance criteria second, nothing left for a developer, or a patient standing alone at a kiosk, to guess at.</p>
+    <a class="x5" href="../#work" style="display:inline-flex;align-items:center;gap:9px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;color:#ffffff;background:var(--brand);padding:15px 26px;border-radius:16px;box-shadow:0 4px 0 var(--brand-shade);transition:box-shadow .12s,transform .12s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>Back to what shipped</a>
+  </div>
+</section>
+
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
