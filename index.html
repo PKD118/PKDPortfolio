@@ -307,10 +307,11 @@
     <div data-g="3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px">
         <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px"><span style="width:34px;height:34px;border-radius:12px;background:#aee0fa;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07405c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg></span><h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0">Requirements &amp; stakeholders</h3></div>
-        <p style="font-size:14.5px;line-height:1.62;color:var(--fg-2);font-weight:500;margin:0 0 14px">On GenFit I was in the client calls from day one. On the others I usually got a short readme or an existing product to study and not much else. Either way it came down to the same thing: work out what people actually needed, turn that into scope, and explain the reasoning back in plain terms.</p>
+        <p style="font-size:14.5px;line-height:1.62;color:var(--fg-2);font-weight:500;margin:0 0 14px">On GenFit I was in the client calls from day one. On the others I usually got a short readme or an existing product to study and not much else. Either way it came down to the same thing: work out what people actually needed, turn that into scope, and explain the reasoning back in plain terms. Then kept sending written updates so nobody had to come ask for one.</p>
         <div style="display:flex;flex-wrap:wrap;gap:7px">
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Client discovery</span>
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Stakeholder communication</span>
+          <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Recurring status updates</span>
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">US ↔ BD timezones</span>
         </div>
       </div>
@@ -325,11 +326,12 @@
       </div>
       <div data-reveal style="background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px">
         <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px"><span style="width:34px;height:34px;border-radius:12px;background:#a8e063;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2c4a0b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:18px;margin:0">Quality as a process</h3></div>
-        <p style="font-size:14.5px;line-height:1.62;color:var(--fg-2);font-weight:500;margin:0 0 14px">On Harp, I cared more about the bug that hadn't shown up yet than the one right in front of me. That meant manual QA on every page, growing the Playwright suite from 220 to 298 tests, GitHub Actions posting results to Slack after every PR, and scheduled runs that point straight at whatever broke.</p>
+        <p style="font-size:14.5px;line-height:1.62;color:var(--fg-2);font-weight:500;margin:0 0 14px">On Harp, I cared more about the bug that hadn't shown up yet than the one right in front of me. That meant manual QA on every page, growing the Playwright suite from 220 to 298 tests, GitHub Actions posting results to Slack after every PR, and scheduled runs that point straight at whatever broke. PRs got reviewed and merged in the order their testing cleared, never ahead of it.</p>
         <div style="display:flex;flex-wrap:wrap;gap:7px">
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Manual + automated QA</span>
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">CI/CD · GitHub Actions</span>
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Slack-synced PR results</span>
+          <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Dependency-aware PR sequencing</span>
           <span style="padding:6px 13px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--fg-2);font-weight:700;font-size:12.5px">Sentry monitoring</span>
         </div>
       </div>
