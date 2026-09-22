@@ -23,6 +23,7 @@ There is no test suite, linter, or CI. Verify changes by opening the page in a b
 ```
 index.html            landing page, PM/product-role targeted (single file, all sections)
 mobile/index.html      mobile-developer version of the landing page, served at /mobile
+qa/index.html           SDET/QA automation version of the landing page, served at /qa
 genfit/index.html      GenFit case study, served at /genfit (linked from both landing pages)
 styles.css              shared: CSS variables, responsive overrides, .xN hover/active states
 app.js                  shared: IIFE, vanilla JS, no dependencies
@@ -30,9 +31,9 @@ assets/                 photo, project images, GenFit screenshots, CV PDFs
 vercel.json             rewrites (e.g. /flutter-cv -> PDF) + immutable cache headers for /assets
 ```
 
-The site targets two audiences: the root page sells Biduyt as a **technical product manager**; `/mobile` sells him as a **mobile developer**. Same design system, same facts, different framing — content edits to one should be checked against the other so the two stories never contradict.
+The site targets three audiences: the root page sells Biduyt as a **technical product manager**; `/mobile` sells him as a **mobile developer**; `/qa` sells him as an **SDET / QA automation engineer**. Same design system, same facts, different framing — content edits to one should be checked against the others so the stories never contradict.
 
-`mobile/index.html` and `genfit/index.html` link back to the shared `../styles.css` and `../app.js` — any style/behavior change made there must stay in sync with the root page since all pages share the same stylesheet and script. Sub-pages reference assets as `../assets/...`.
+`mobile/index.html`, `qa/index.html`, and `genfit/index.html` link back to the shared `../styles.css` and `../app.js` — any style/behavior change made there must stay in sync with the root page since all pages share the same stylesheet and script. Sub-pages reference assets as `../assets/...`.
 
 ## Architecture
 
